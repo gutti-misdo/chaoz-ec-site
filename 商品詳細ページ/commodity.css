@@ -148,12 +148,14 @@ font-size: 25px;
 }
 
 .product-info {
-    max-width: 700%;
+    max-width: 100%;
+    height: 600px;
     border: 1px solid #ccc;
     padding: 30px;
     border-radius: 8px;
     background-color: #f9f9f9;
     margin-top: 10px; /* 画像と情報の間に上下のスペースを追加 */
+    
 }
 
 
@@ -196,22 +198,22 @@ font-size: 25px;
 .main-image-container {
     width: 400px;  /* 固定幅 */
     height: 400px; /* 固定高さ */
-    overflow: hidden; /* 画像が固定枠からはみ出さないようにする */
+   /* 画像が固定枠からはみ出さないようにする */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    margin-bottom: 10px; /* サムネイルとの間に少しスペース */
+    margin-bottom: 10px; 
+    margin-top: 50px;/* サムネイルとの間に少しスペース */
 }
 
 /* サムネイルコンテナ */
 .thumbnail-container {
     display: flex;
-    width: 80px; /* サムネイル幅を小さめに設定 */
-    height: 80px; /* サムネイル高さも調整 */
-    justify-content: center;
+    width: 90px; /* サムネイル幅を小さめに設定 */
+    height: 90px; /* サムネイル高さも調整 */
     gap: 10px; /* 各サムネイル間にスペース */
-    margin-top: 10px;
+    margin-top: 50px;
 }
 /* サムネイル */
 .thumbnail {
@@ -227,4 +229,32 @@ font-size: 25px;
 
 .thumbnail:hover {
     transform: scale(1.05); /* ホバー時の拡大を少し控えめに */
+}
+.thumbnail-container a {
+    display: inline-block; /* aタグをインラインブロックに変更 */
+    width: 90px; /* サムネイル幅を小さめに設定 */
+    height: 90px; /* サムネイル高さも調整 */
+    gap: 10px; /* 各サムネイル間にスペース */
+  
+}
+
+.thumbnail-container a img {
+    width: 70px; /* サムネイル幅を小さめに設定 */
+    height: 70px; /* サムネイル高さも調整 */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: 5px; /* サムネイル同士の間隔 */
+}
+
+.thumbnail-container a img:hover {
+    transform: scale(1.05); /* ホバー時に画像を少し拡大 */
+}
+/* 区切り線のスタイル */
+.divider {
+    border: none;
+    border-top: 1px solid #ccc; /* 線の色を調整 */
+    margin: 10px 0; /* 上下のスペース */
 }

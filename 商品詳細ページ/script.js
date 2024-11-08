@@ -1,3 +1,14 @@
+window.addEventListener('scroll',function(){
+    const fixedImage = document.querySelector('fixed-image');
+    const scrollPosition = window.scrollY;
+
+    if(scrollPosition > 300){
+        fixedImage.computedStyleMap.opacity = '0.5';
+    }else{
+        fixedImage.style.opacity = '1';
+    }
+    });
+
 // サムネイル画像を取得
 const thumbnails = document.querySelectorAll('.thumbnail');
 

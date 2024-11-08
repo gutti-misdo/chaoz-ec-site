@@ -23,14 +23,18 @@ body {
 
 /* トップバー */
 .top-bar {
-    display: flex; /* 要素を横並びに */
-    justify-content: space-between; /* 左右にスペースを作る */
-    align-items: center; /* アイテムを垂直中央揃え */
+    top: 0;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 20px;
     background-color: #2A3B76;
     color: #ffffff;
-    margin-bottom: 50px;
+    z-index: 1000;
+    height: 80px;
+    /* 高さを指定 */
 }
 
 /* サイトタイトル */
@@ -44,9 +48,12 @@ body {
 .search-bar-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* 中央に配置 */
-    flex-grow: 1; /* 残りのスペースを埋める */
-    margin: 0 20px; /* 左右に少しスペースを */
+    justify-content: center;
+    /* 中央に配置 */
+    flex-grow: 1;
+    /* 残りのスペースを埋める */
+    margin: 0 20px;
+    /* 左右に少しスペースを */
 }
 
 .search-bar {
@@ -82,7 +89,8 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    margin-left: 20px;
+    /* 検索バーとカートボタンの間にスペースを追加 */
     transition: background-color 0.3s ease;
 }
 
@@ -112,7 +120,8 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     max-width: 1200px;
     width: 100%;
-    grid-gap: 100px; /* カード間にスペースを追加 */
+    grid-gap: 100px;
+    /* カード間にスペースを追加 */
 }
 
 
@@ -121,9 +130,12 @@ body {
     width: 100%;
     height: auto;
     border-radius: 8px;
-  
-   
+    position: sticky;
+    top: 3;
+
+
 }
+
 .add-to-cart-btn {
     padding: 10px 20px;
     background-color: #007bff;
@@ -136,26 +148,25 @@ body {
 .add-to-cart-btn:hover {
     background-color: #0056b3;
 }
-.text{
-font-size: 25px;
+
+.text {
+    font-size: 25px;
 }
+
 .product-card {
     padding: 30px;
     border-radius: 8px;
     text-align: center;
     background-color: #fff;
-    margin-right: 20px; /* 右側に余白を追加 */
+    margin-right: 20px;
+    /* 右側に余白を追加 */
+   
 }
 
 .product-info {
     max-width: 100%;
-    height: 600px;
-    border: 1px solid #ccc;
-    padding: 30px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    margin-top: 10px; /* 画像と情報の間に上下のスペースを追加 */
-    
+    height: 430px;
+    margin-top: 30px;
 }
 
 
@@ -164,97 +175,117 @@ font-size: 25px;
     font-weight: bold;
     color: #2A3B76;
 }
-.rating, .bestseller {
+
+.rating,
+.bestseller {
     font-size: 14px;
     color: #555;
     margin: 5px 0;
 }
+
 .bestseller {
     color: #d9534f;
     font-weight: bold;
 }
+
 .price {
     font-size: 20px;
     color: #d9534f;
     font-weight: bold;
     margin-top: 10px;
 }
+
 .old-price {
     text-decoration: line-through;
     color: #888;
     margin-left: 10px;
 }
-.delivery-info, .points-info, .offers-info, .business-info, .card-info {
+
+.delivery-info,
+.points-info,
+.offers-info,
+.business-info,
+.card-info {
     font-size: 14px;
     color: #333;
     margin-top: 10px;
 }
+
 .note {
     font-size: 12px;
     color: #555;
 }
+
+/* メイン画像コンテナ */
+
+/* メイン画像コンテナ */
 /* メイン画像コンテナ */
 /* メイン画像コンテナ */
 .main-image-container {
-    width: 400px;  /* 固定幅 */
-    height: 400px; /* 固定高さ */
-   /* 画像が固定枠からはみ出さないようにする */
+    position: sticky;
+    top: 70px; /* 固定位置 */
+    margin-top: 80px; /* 初期スクロールからの余白 */
+    max-width: 415px;
+    max-height: 319px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    margin-bottom: 10px; 
-    margin-top: 50px;/* サムネイルとの間に少しスペース */
+    z-index: 10;
 }
 
 /* サムネイルコンテナ */
 .thumbnail-container {
+    position: sticky;
+    top: 450px; /* メイン画像の下の位置 */
+    margin-top: 120px; /* 初期スクロールからの余白 */
+    width: 90px; /* サイズそのまま維持 */
+    height: 90px;
     display: flex;
-    width: 90px; /* サムネイル幅を小さめに設定 */
-    height: 90px; /* サムネイル高さも調整 */
-    gap: 10px; /* 各サムネイル間にスペース */
-    margin-top: 50px;
+    gap: 10px;
+    z-index: 9;
 }
+
 /* サムネイル */
 .thumbnail {
-    width: 50px; /* サムネイル幅を小さめに設定 */
-    height: 50px; /* サムネイル高さも調整 */
+    width: 90px; /* サイズそのまま維持 */
+    height: 90px;
     border: 1px solid #ccc;
     border-radius: 4px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.2s;
-    margin: 5px; /* サムネイル同士の間隔 */
+    margin: 5px;
 }
 
 .thumbnail:hover {
-    transform: scale(1.05); /* ホバー時の拡大を少し控えめに */
-}
-.thumbnail-container a {
-    display: inline-block; /* aタグをインラインブロックに変更 */
-    width: 90px; /* サムネイル幅を小さめに設定 */
-    height: 90px; /* サムネイル高さも調整 */
-    gap: 10px; /* 各サムネイル間にスペース */
-  
+    transform: scale(1.05);
 }
 
-.thumbnail-container a img {
-    width: 70px; /* サムネイル幅を小さめに設定 */
-    height: 70px; /* サムネイル高さも調整 */
+/* カラーオプションコンテナ */
+.color-options-container {
+    position: sticky; /* スクロールに合わせて固定 */
+    top: 850px; /* サムネイルコンテナの下の位置 */
+    display: flex;
+    flex-wrap: wrap;  /* 画像が親要素の幅を超えた場合に次の行に折り返す */
+    gap: 10px;  /* 画像間の間隔 */
+    margin-top: 20px;
+    z-index: 8;
+    justify-content: flex-start; /* 左揃え */
+}
+
+/* カラーオプションの画像 */
+.color-options-container a img {
+    width: 90px; /* サイズそのまま維持 */
+    height: 90px;
     border: 1px solid #ccc;
     border-radius: 4px;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.2s;
-    margin: 5px; /* サムネイル同士の間隔 */
+    margin: 5px;
 }
 
-.thumbnail-container a img:hover {
-    transform: scale(1.05); /* ホバー時に画像を少し拡大 */
-}
-/* 区切り線のスタイル */
-.divider {
-    border: none;
-    border-top: 1px solid #ccc; /* 線の色を調整 */
-    margin: 10px 0; /* 上下のスペース */
+.color-options-container a img:hover {
+    transform: scale(1.05);
 }

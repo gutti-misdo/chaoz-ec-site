@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録画面</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1c1c1c;
+            margin: 0;
+        }
+
+        .iphone-container {
+            width: 375px;
+            height: 812px;
+            border-radius: 34px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            border: 5px solid #000000;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f0f0ff 100%);
+            position: relative;
+            padding: 0px 0px 110px;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 30px;
+            background-color: #1c1c1c;
+            border-radius: 15px;
+            z-index: 3;
+        }
+
+        .color-bar {
+            width: 200%;
+            height: 100px;
+            background-color: #2A3B76;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+            z-index: 4;
+            padding: 5px 15px;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            align-items: center;
+            position: absolute;
+            top: 35px; /* ノッチの下に配置 */
+            left: 20px; /* 左側に配置 */
+            z-index: 6; /* 色付きバーの上に表示 */
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .site-title {
+            font-size: 18px;
+            color: #E6FA00;
+            margin-left: 0px;
+            font-weight: bold;
+            z-index: 5;
+        }
+
+        .signal {
+            font-size: 13px;
+        }
+
+        .battery-icon {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 16px;
+        }
+
+        .battery-body {
+            width: 20px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 2px;
+            background-color: #3ADB76;
+        }
+
+        .battery-tip {
+            width: 3px;
+            height: 6px;
+            background-color: white;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 200px;
+            position: relative;
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(212, 212, 212, 0.644);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .input-field {
+            width: 70%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .login-button {
+            width: 60%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        label {
+            height: 10px;
+            width: 70%;
+            text-align: left;
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .text {
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="iphone-container">
+        <div class="screen">
+            <div class="color-bar"></div>
+            <div class="notch"></div>
+            <div class="top-bar">
+                <div class="signal">docomo</div>
+                <div class="battery-icon">
+                    <div class="battery-body"></div>
+                    <div class="battery-tip"></div>
+                </div>
+            </div>
+
+            <!-- ハンバーガーメニューとタイトル -->
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <span class="site-title">チャオズEC</span>
+            </div>
+
+            <form onsubmit="redirectToLogin(event)">
+                <div class="login-form">
+                    <h3 class="text">登録が完了しました</h3>
+                    <p class="text">ログイン画面から</p>
+                       <p class="text"> ログインしてください。</p>
+                    <button type="submit" class="login-button">ログイン画面へ</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        function redirectToLogin(event) {
+            event.preventDefault(); // デフォルトのフォーム送信を防ぐ
+            window.location.href = 'login.html'; // ログインページにリダイレクト
+        }
+    </script>
+</body>
+
+</html>

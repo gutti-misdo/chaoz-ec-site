@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC版ECサイトログイン画面</title>
+    <link rel="stylesheet" href="login.css">
+    
+</head>
+
+<body>
+    <script src="login.js"></script>
+    <div class="container">
+        <div class="header">チャオズECログイン</div>
+        
+        <label for="email">メールアドレス</label>
+        <input type="text" class="input-field" id="email" placeholder="example@example.com">
+
+        <label for="password">パスワード</label>
+        <input type="password" class="input-field" id="password" placeholder="********">
+
+        <button class="login-button" onclick="handleLogin()">ログイン</button>
+        <button class="signup-button" onclick="handleSignup()">新規作成</button>
+
+        <div class="footer">
+            © 2024 チャオズEC
+        </div>
+    </div>
+</body>
+
+</html>

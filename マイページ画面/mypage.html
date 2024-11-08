@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone ECサイトログイン画面</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1c1c1c;
+            margin: 0;
+        }
+
+        .iphone-container {
+            width: 375px;
+            height: 812px;
+            border-radius: 34px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            position: relative;
+            border: 5px solid #000000;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #ffffff 0%, #f0f0f0ff 100%);
+            position: relative;
+            padding: 0px 0px 110px;
+            overflow: hidden;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 140px;
+            height: 30px;
+            background-color: #1c1c1c;
+            border-radius: 15px;
+            z-index: 3;
+        }
+
+        .color-bar {
+            width: 200%;
+            height: 100px;
+            background-color: #2A3B76;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+            z-index: 4;
+            padding: 5px 15px;
+        }
+
+        .hamburger-menu {
+            cursor: pointer;
+            align-items: center;
+            position: absolute;
+            top: 35px;
+            left: 20px;
+            z-index: 6;
+        }
+
+        .hamburger-line {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
+        .site-title {
+            font-size: 18px;
+            color: #E6FA00;
+            margin-left: 0px;
+            font-weight: bold;
+            z-index: 5;
+        }
+
+        .signal {
+            font-size: 13px;
+        }
+
+        .battery-icon {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 16px;
+        }
+
+        .battery-body {
+            width: 20px;
+            height: 10px;
+            border: 2px solid white;
+            border-radius: 2px;
+            background-color: #3ADB76;
+        }
+
+        .battery-tip {
+            width: 3px;
+            height: 6px;
+            background-color: white;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 90px;
+            position: relative;
+        }
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 縦方向の中央揃え */
+            margin-top: 100px;
+            position: relative;
+        }
+
+        .login-form00 {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            /* 中央揃え */
+            margin-top: 80px;
+            position: relative;
+        }
+
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(212, 212, 212, 0.644);
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .input-field {
+            width: 100%;
+            margin: 0px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            align-items: center;
+           
+        }
+
+        .login-button {
+            width: 60%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-button00 {
+            width: 40%;
+            padding: 5px;
+            background-color: #fdcf00;
+            color: rgb(17, 17, 17);
+            border: 2px solid rgb(155, 155, 155);
+            border-radius: 3px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
+
+        .login-button01 {
+            width: 90%;
+            padding: 10px;
+            /* ボタンの高さを調整 */
+            background-color: #fdcf00;
+            color: rgb(17, 17, 17);
+            border: 2px solid rgb(155, 155, 155);
+            /* 2pxの黒い枠線 */
+            border-radius: 3px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        .bottom-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .home-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+
+        label {
+            height: 10px;
+            width: 70%;
+            text-align: left;
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .text {
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .text00 {
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .cart-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-total {
+            font-size: 18px;
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        fieldset {
+            width: 80%;
+            /* 幅を80%に */
+            max-width: 600px;
+            /* 最大幅を600pxに設定 */
+            padding: 20px;
+            /* 内側に余白を追加 */
+            margin: 20px auto;
+            /* 中央寄せ */
+            border-radius: 15px;
+            text-align: center;
+            /* フィールドセット内のテキストを中央揃え */
+        }
+
+        button {
+            margin: 10px auto;
+            /* ボタンを中央に配置するためのマージン */
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+        .centered-button {
+            display: flex;
+            justify-content: center;
+        }
+
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 0px;
+            padding-bottom: 10px;
+        }
+
+        .page-header00 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .page-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .login-button00 {
+            padding: 5px 15px;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function handleLogin() {
+            // ログインボタンがクリックされたときの処理
+            window.location.href = 'nextlogin.html'; // nextlogin.htmlに遷移
+        }
+
+        function handleSignup() {
+            // 新規作成ボタンがクリックされたときの処理
+            window.location.href = 'Signup.html'; // Signup.htmlに遷移
+        }
+    </script>
+</head>
+
+<body>
+    <div class="iphone-container">
+        <div class="screen">
+            <div class="color-bar"></div>
+            <div class="notch"></div>
+            <div class="top-bar">
+                <div class="signal">docomo</div>
+                <div class="battery-icon">
+                    <div class="battery-body"></div>
+                    <div class="battery-tip"></div>
+                </div>
+            </div>
+
+            <!-- ハンバーガーメニューとタイトル -->
+            <div class="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <span class="site-title">チャオズEC</span>
+            </div>
+
+
+
+            <div class="login-form">
+                <div class="background-overlay"></div>
+                <div class="page-header">
+                    <h1>マイページ</h1>
+                    <button class="login-button00" id="backhome" onclick="handleLogin()">ホームへ</button>
+                </div>
+                <div class="page-header00">
+                    <h3>ログアウト</h3>
+                </div>
+                <div class="page-header">
+                    <button class="login-button01" id="logout" onclick="handleLogin()">サインアウト</button>
+                </div>
+                <hr style="border: 0; height: 2px; background: #333;">
+
+                <div class="login-form00">
+                    <label for="email">メールアドレス</label>
+                <input type="text" class="input-field" id="email" placeholder="example@example.com">
+                <label for="password">パスワード</label>
+                <input type="password" class="input-field" id="password" placeholder="********"><br>
+                <button class="login-button" id="login" onclick="handleLogin()">ログイン</button><br>
+                </div>
+            </div>

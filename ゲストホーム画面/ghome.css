@@ -1,0 +1,155 @@
+/* 基本のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/* コンテナ */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* トップバー */
+.top-bar {
+    display: flex; /* 要素を横並びに */
+    justify-content: space-between; /* 左右にスペースを作る */
+    align-items: center; /* アイテムを垂直中央揃え */
+    width: 100%;
+    padding: 20px;
+    background-color: #2A3B76;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* サイトタイトル */
+.site-title {
+    font-size: 24px;
+    color: #E6FA00;
+    font-weight: bold;
+}
+
+/* 検索バーコンテナ */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央に配置 */
+    flex-grow: 1; /* 残りのスペースを埋める */
+    margin: 0 20px; /* 左右に少しスペースを */
+}
+
+.search-bar {
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* ログインボタン */
+.login-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+}
+
+/* カートボタン */
+.cart-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #e68900;
+}
+
+/* 商品コンテナ */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.product-card .price {
+    font-size: 16px;
+    color: #007bff;
+    margin: 5px 0;
+}
+
+.add-to-cart-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #0056b3;
+}

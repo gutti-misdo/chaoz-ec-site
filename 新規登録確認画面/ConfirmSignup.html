@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登録内容確認画面</title>
+    <link rel="stylesheet" href="ConfilmSignup.css">
+</head>
+
+<body>
+    <script src="ConfilmSignup.js"></script>
+    <div class="container">
+        <div class="top-bar">
+            <span class="site-title">チャオズEC - 登録確認</span>
+            <div class="battery-icon">
+                <div class="battery-body"></div>
+                <div class="battery-tip"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h3 class="text">登録内容確認</h3>
+            <label for="name">氏名</label>
+            <div id="name" class="display-info"></div>
+
+            <label for="email">メールアドレス</label>
+            <div id="email" class="display-info"></div>
+
+            <label for="password">パスワード</label>
+            <div id="password" class="display-info">********</div>
+
+            <label for="Zipcode">郵便番号</label>
+            <div id="Zipcode" class="display-info"></div>
+
+            <label for="address">住所</label>
+            <div id="address" class="display-info"></div>
+
+            <label for="BNRN">建物名 部屋番号</label>
+            <div id="BNRN" class="display-info"></div>
+
+            <button type="button" class="login-button" onclick="redirectToFinish()">登録</button>
+        </div>
+    </div>
+</body>
+</html>

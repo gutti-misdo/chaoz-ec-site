@@ -40,7 +40,24 @@ colorOptions.forEach(option => {
         mainImage.src = `https://example.com/images/${color}-image.jpg`; // 画像URLは色ごとに適切に設定してください
     });
 });
-
 function handleLogin() {
-    window.location.href = 'login.html'; // login.htmlに遷移
+    window.location.href = 'loginpc.html'; // login.htmlに遷移
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stickyElement = document.getElementById('sticky-element');
+    const stopper = document.querySelector('.stopper');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                stickyElement.classList.add('stopped'); // 止める
+            } else {
+                stickyElement.classList.remove('stopped'); // スクロール再開
+            }
+        });
+    }, { threshold: 1.0 });
+
+    observer.observe(stopper);
+});

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム画面(ゲスト)</title>
+    <link rel="stylesheet" href="commodity.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <a href="ghome.html">
+            <span class="site-title">チャオズ.com</span>
+            </a>
+            <!-- ここに検索バーを追加 -->
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="検索...">
+                <button class="search-button">検索</button>
+            </div>
+            <!-- ログインボタン -->
+            <button class="login-btn" onclick="handleLogin()">ログイン</button>
+
+            <!-- カートボタン -->
+            <button class="cart-btn">🛒</button>
+        </div>
+
+        <!-- 商品リストを表示 -->
+        <div class="content">
+            <div class="product-container">
+                <div class="product-card">
+                    <div class="main-image-container">
+                        <img id="main-image" src="https://m.media-amazon.com/images/I/61puQAWMz9L._AC_SX679_.jpg"
+                            alt="メイン画像">
+                    </div>
+
+                    <!-- サムネイル画像 -->
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/61puQAWMz9L._AC_SX679_.jpg"
+                            alt="商品1">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/71BLYCKcy+L._AC_SX679_.jpg"
+                            alt="商品2">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/719KNaa8LlL._AC_SX679_.jpg"
+                            alt="商品3">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/710GXt8K5rL._AC_SX679_.jpg"
+                            alt="商品4">
+                    </div>
+                </div>
+
+
+                <div class="product-info">
+                    <!-- 商品タイトル -->
+                    <div class="text">
+                        【2024冷暖兼用】扇風機 羽なし タワーファン ８段階送風＆3段階温風切替 左右100°首振り 9Hタイマー機能 温風 冷風 広範囲送風 羽根なし型 リビング扇風機 強力送風 大風量 リモコン付 1400W 暖風送風 ファンヒーター 過熱保護 転倒安全装置 即暖 省エネ 節電 子供部屋/リビング/寝室/書斎/キッチン/脱衣所/洗面所/トイレ/オフィス用 日本語説明書 PSE認証済み ホワイト
+                    </div>
+
+
+
+                    <!-- レーティング情報 -->
+                    <div class="rating">⭐️ 4.3 / 5（1,468件の評価）</div>
+
+                    <!-- ベストセラー情報 -->
+                    <div class="bestseller">ベストセラー1位 - カテゴリ ヘアドライヤー</div>
+                    <div class="note">過去1か月で1万点以上購入されました</div>
+
+
+                    <!-- 価格情報 -->
+                    <div class="price">-20% ¥13,599 <span class="old-price">¥16,999</span> 税込</div>
+                    <!-- 区切り線 -->
+                    <hr class="divider">
+
+                    <!-- 配送情報 -->
+                    <div class="delivery-info">翌朝配送</div>
+
+
+                    <!-- ポイント情報 -->
+                    <div class="points-info">ポイント: 170pt (1%) <span class="note">詳細はこちら</span></div>
+
+
+
+                    <!-- エントリ情報 -->
+                    <div class="offers-info">
+                        【対象者限定】5つのカテゴリー x ブランドセレクションにて1万円以上のご購入で最大10%期間限定ポイント ポイントアップ中
+                        <span class="note">(適用条件あり)</span> <span class="note">細則を確認</span>
+                    </div>
+
+
+
+                    <!-- 法人価格情報 -->
+                    <div class="business-info">
+                        法人価格で最大3%割引となります。無料のビジネスアカウントに登録する
+                    </div><br>
+                    <!-- 区切り線 -->
+                    <hr class="divider"><br>
+                    <!-- カラーオプション -->
+                    <div class="color-options-container">
+                        <div class="product-list">
+                            <div class="product-card00">
+                                <a href="fanheater.html">
+                                    <img class="thumbnail selected"
+                                        src="https://m.media-amazon.com/images/I/61puQAWMz9L._AC_SX679_.jpg" alt="ホワイト">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥13,599</p>
+                                    <p class="old-price">¥16,999</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+                            <div class="product-card00">
+                                <a href="fanheaterg.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/61CmRacCHrL._AC_SX679_.jpg" alt="グレー">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥13,599</p>
+                                    <p class="old-price">¥16,999</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            
+                          
+
+                        </div><br>
+
+                    <div class="additional-info">
+                        <div><strong>ブランド:</strong> MEYBECCI</div>
+                        <div><strong>特徴</strong>:</strong> 二重過熱保護, リモコン付き, 3段階温風調節,8段階送風調節, 自動首振り, 大風量速暖, 切り忘れ防止, メモリー機能, 1-9hタイマー機能, 転倒OFF, 羽根なし, VO級難燃性素材</div>
+                        <div><strong>色</strong>:</strong> ホワイト</div>
+                        <div><strong>フォーム形式:</strong> タワー</div>
+                        <div><strong>屋内/屋外使用:</strong> インドア</div><br>
+                        <!-- この商品について -->
+                        <div class="about-product">
+                            <strong>この商品について:</strong>
+                            <ul>
+                                <li>【2024最新冷暖両用モデル 扇風機】弊社の 羽なし扇風機 は8段階送風風量（最大48w）と3段階温風（弱600w/中900w/強1400w）を自由に切り替えられます。1年四季に使える 扇風機 は寒い冬には電気ストーブとして、暑い夏にはDCモーター扇風機として使えます。冷暖兼用の ファンヒーター は快適加熱および送風効果をもたらし、四季折々の快適な室内環境を作られます。</li>
+                                <li>【大風量・省エネ節電 タワーファン 】弊社の DCモーターファンは 環状と複数の送風口は市販の普通品より風の直進性は優れて、カバーできる範囲も広く数秒間速暖を実現し、部屋中をしっかり暖められます。更に省エネの設計のため従来の加熱材料（石英管など）よりも省エネ節電です。/li>
+                                <li>【左右自動首振り・9時間タイマー・リモコン操作】 羽根なし 扇風機 は左右100°に自動首振り機能でより広範囲に送風できるので、8-15畳の部屋に対応します。自分のニーズに合わせて1-9時間タイマー「切」設定可能となり、出勤時や夜間の就寝時、勉強時に最適です。また、羽根無し扇風機 を８ｍ以内で自由に遠隔操作できて、ベッドやソファーから離れる必要はありません。暑い季節に涼しさはすばやく部屋の隅々まで充満させ、気持ちよい室内環境を作ります。</li>
+                                <li>【コンパクト・空間を取らない】 冷暖房機 はコンパクトのタワ型且つ2.7kgの重さで移動したいところ、例えばリビングや寝室やトイレや脱衣所や書斎など任意のところに楽に移動でき、狭い場所にもスペースを取れないです。</li>
+                                <li>【過熱自動OFF機能・二重過熱保護・ABS防火素材】セラミックヒーター は過熱防止装置、室温異常自動停止装置、温度検知センサー内蔵されており、異常加熱・オーバーヒートを予防しています。羽根なしセラミックファンヒーター ので、火傷も防ぎます。お子供とペットがいる家庭はご安心にお使いいただけます。</li>
+                                <li>【12か月間安心保証＆生涯の技術サポート】本冷暖房 温風 冷風を購入後、生涯のアフターサービスと12か月の安心保証を提供します。もし商品は使用前、使用中、何かご問題がございましたら、いつでも保証書に記載れた連絡先に迷わずににご連絡ください。弊社早急に代替品の再配達や返品全額返金の対応をさせていただきます。お客様に完全満足した購入体験を得られることは我々にとって何よりです。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <script src="script.js"></script>
+</body>
+
+</html>

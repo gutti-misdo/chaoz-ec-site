@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム画面(ゲスト)</title>
+    <link rel="stylesheet" href="commodity.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <a href="ghome.html">
+                <span class="site-title">チャオズ.com</span>
+                </a>
+
+            <!-- ここに検索バーを追加 -->
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="検索...">
+                <button class="search-button">検索</button>
+            </div>
+            <!-- ログインボタン -->
+            <button class="login-btn" onclick="handleLogin()">ログイン</button>
+
+            <!-- カートボタン -->
+            <button class="cart-btn">🛒</button>
+        </div>
+
+        <!-- 商品リストを表示 -->
+        <div class="content">
+            <div class="product-container">
+                <div class="move">
+                    <div class="product-card">
+                        <div class="main-image-container">
+                            <img id="main-image" src="https://m.media-amazon.com/images/I/41p69eRR6rL._AC_SX679_.jpg"
+                                alt="メイン画像">
+                        </div>
+                        <!-- サムネイル画像 -->
+                        <div class="thumbnail-container">
+                            <img class="thumbnail selected"
+                                src="https://m.media-amazon.com/images/I/41p69eRR6rL._AC_SX679_.jpg" alt="商品1">
+                            <img class="thumbnail" src="https://m.media-amazon.com/images/I/71MajAtOUaL._AC_SX679_.jpg"
+                                alt="商品2">
+                            <img class="thumbnail" src="https://m.media-amazon.com/images/I/51RU1fNeoHL._AC_SX679_.jpg"
+                                alt="商品3">
+                            <img class="thumbnail" src="https://m.media-amazon.com/images/I/71TLSPimnfL._AC_SX679_.jpg"
+                                alt="商品4">
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="product-info">
+                    <!-- 商品タイトル -->
+                    <div class="text">
+                        SALONIA サロニア スピーディーイオン ドライヤー 大風量 速乾 軽量 マイナスイオン ヘアドライヤー SL-013WH ホワイト
+                    </div>
+
+
+
+                    <!-- レーティング情報 -->
+                    <div class="rating">⭐️ 4.2 / 5（35,356件の評価）</div>
+
+                    <!-- ベストセラー情報 -->
+                    <div class="bestseller">ベストセラー1位 - カテゴリ ヘアドライヤー</div>
+                    <div class="note">過去1か月で1万点以上購入されました</div>
+
+
+                    <!-- 価格情報 -->
+                    <div class="price">-14% ¥5,081 <span class="old-price">¥5,918</span> 税込</div>
+                    <!-- 区切り線 -->
+                    <hr class="divider">
+
+                    <!-- 配送情報 -->
+                    <div class="delivery-info">翌朝配送</div>
+
+
+                    <!-- ポイント情報 -->
+                    <div class="points-info">ポイント: 51pt (1%) <span class="note">詳細はこちら</span></div>
+
+
+
+                    <!-- エントリ情報 -->
+                    <div class="offers-info">
+                        【対象者限定】5つのカテゴリー x ブランドセレクションにて1万円以上のご購入で最大10%期間限定ポイント ポイントアップ中
+                        <span class="note">(適用条件あり)</span> <span class="note">細則を確認</span>
+                    </div>
+
+
+
+                    <!-- 法人価格情報 -->
+                    <div class="business-info">
+                        法人価格で最大3%割引となります。無料のビジネスアカウントに登録する
+                    </div><br>
+                    <!-- 区切り線 -->
+                    <hr class="divider"><br>
+                    <!-- カラーオプション -->
+                    <div class="color-options-container">
+                        <div class="product-list">
+                            <div class="product-card00">
+                                <a href="salonia.html">
+                                    <img class="thumbnail selected"
+                                        src="https://m.media-amazon.com/images/I/51usSZuVhTL._AC_SX679_.jpg" alt="ブラック">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+                            <div class="product-card00">
+                                <a href="saloniag.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51o6sgi6U1L._AC_SX679_.jpg" alt="グレー">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card00">
+                                <a href="salonian.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51Uwyn-TdwL._AC_SX679_.jpg" alt="ネイビー">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card00">
+                                <a href="saloniab.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51pyd0dpZpL._AC_SX679_.jpg" alt="ベージュ">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card00">
+                                <a href="saloniah.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/41p69eRR6rL._AC_SX679_.jpg" alt="ホワイト">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card00">
+                                <a href="saloniaMp.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/61Y2smBN2ZL._AC_SX679_.jpg"
+                                        alt="マイニュアンスパープル">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            <div class="product-card00">
+                                <a href="saloniaMpink.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51K4NflfMmL._AC_SX679_.jpg"
+                                        alt="マイニュアンスピンク">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥5,373</p>
+                                    <p class="old-price">¥5,918</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+
+                        </div><br>
+                        <div class="additional-info">
+                            <div><strong>ブランド:</strong> SALONIA (サロニア)</div>
+                            <div><strong>色:</strong> ホワイト</div>
+                            <div><strong>ワット数:</strong> 1200 W</div>
+                            <div><strong>電源:</strong> 電源コード式</div>
+                            <div><strong>商品の重量:</strong> 495 グラム</div><br>
+                            <!-- この商品について -->
+                            <div class="about-product">
+                                <strong>この商品について:</strong>
+                                <ul>
+                                    <li>ホワイト</li>
+                                    <li>【大風量】2.3㎥/min ※大風量。より強い風で速乾を実現。※TURBO時 (自社測定による)</li>
+                                    <li>【マイナスイオン】髪に嬉しいマイナスイオン機能を搭載。</li>
+                                    <li>【SETモード搭載】やわらかい温風で髪のことを考えたスタイリングが可能。</li>
+                                    <li>【コンパクト】折りたたみ式なので、コンパクトで収納や持ち運びなどにも便利。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 区切り線 -->
+                    <hr class="divider">
+
+                    <!-- 追加商品情報 -->
+
+                    <script src="script.js"></script>
+</body>
+
+</html>

@@ -8,8 +8,8 @@
 <body>
     <h3>登録が完了しました</h3>
     ログイン画面からログインを行ってください
-    <button type="button">ログイン画面へ</button>
     <?php
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -18,10 +18,10 @@
     $BN = $_POST['BN'];
     $RN = $_POST['RN'];
     try {
-        $pdo = new PDO('mysql:host=mysql304.phy.lolipop.lan;dbname=LAA1553900-php2024;charset=utf8', 'LAA1553900', 'Pass1105');
+        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql=$pdo->prepare('INSERT INTO customer(custormer_name, address, email, password, buliding_name, room_number, post_code)VALUES(?,?,?,?,?,?,?)');
-        $sql->execute([$name,$address,$email,$password,$BN,$RN,$yubin]);
+        $sql->execute([$name,$address,$email,password_hash($password, PASSWORD_DEFAULT),$BN,$RN,$yubin]);
     } catch (PDOException $e) {
         echo '接続失敗: ' . $e->getMessage();
     }

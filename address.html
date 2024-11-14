@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム画面(ゲスト)</title>
+    <title>住所登録完了画面</title>
     <link rel="stylesheet" href="mypage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -28,41 +28,22 @@
             <button class="cart-btn">🛒</button>
         </div>
 
-        <div class="page-header">
-            <h3 class="form-title1">マイページ</h3>
-            <a href="home.html">
-            <button type="button" class="edit-button">ホームへ</button>
-            </a>
-            <h3 class="form-title1">ログアウト</h3>
-            <a href="loginpc.html">
-            <button type="button" class="edit-button">サインアウト</button>
-            </a>
-        </div>
-       
-        <hr class="divider">
-
         <!-- 住所変更フォーム -->
-        <h3 class="form-title">住所変更</h3>
+        <h1 class="form-title">住所変更完了</h1>
+        <h3>住所の変更が完了しました</h3>
         <form onsubmit="savedata(event)">
             <label class="form-label" for="number">郵便番号　数字７桁で入力</label>
-            <input type="text" class="form-field" id="number" name="number" required>
+           
 
             <label class="form-label" for="address">住所</label>
-            <input type="text" class="form-field" id="address" name="address" required>
+            
 
-            <label class="form-label" for="building">建物名　部屋番号</label>
-            <input type="text" class="form-field" id="building" name="building" required>
+            <label class="form-label" for="building">建物名　部屋番号</label> 
             <p class="form-label">登録されている住所</p><br>
             <div class="button-container">
-                <a href="address.html">
-                <button type="submit" class="submit-button">変更</button>
-                </a>
+                <a href="mypage.html" class="edit-button">マイページへ戻る</a>
             </div>
         </form>
-        <hr class="divider">
-        <div class="page-header">
-            <h3 class="form-title1">注文履歴</h3>
-        </div>
     </div>
 
     <script src="ghome.js"></script>

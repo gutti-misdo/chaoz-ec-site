@@ -1,0 +1,331 @@
+@charset "UTF-8";
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+/* 基本のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+body {
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/* コンテナ */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+     
+}
+
+/* トップバー */
+.top-bar {
+    display: flex; /* 要素を横並びに */
+    justify-content: space-between; /* 左右にスペースを作る */
+    align-items: center; /* アイテムを垂直中央揃え */
+    width: 100%;
+    padding: 20px;
+    background-color: #2A3B76;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* サイトタイトル */
+.site-title {
+    font-size: 24px;
+    color: #E6FA00;
+    font-weight: bold;
+}
+
+/* 検索バーコンテナ */
+.search-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央に配置 */
+    flex-grow: 1; /* 残りのスペースを埋める */
+    margin: 0 20px; /* 左右に少しスペースを */
+}
+
+.search-bar {
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+/* ログインボタン */
+.login-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #45a049;
+}
+
+/* カートボタン */
+.cart-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn:hover {
+    background-color: #e68900;
+}
+
+.form-title {
+    font-size: 24px;
+    text-align: left;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    width: 800px;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px;
+}
+
+.submit-button {
+    width: 30%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+.button-container {
+    text-align: center; /* ボタンを中央に揃える */
+}
+.submit-button1 {
+    width: 50%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.submit-button1:hover {
+    background-color: #0056b3;
+}
+.button-container1 {
+    text-align: center; /* ボタンを中央に揃える */
+}
+/* 区切り線スタイル */
+.divider {
+    width: 80%;
+    border: none;
+    border-top: 2px solid #ccc; /* 線の太さと色を指定 */
+    margin: 20px 0; /* 上下に余白を追加 */
+}
+/* マイページのヘッダー */
+.page-header {
+    display: flex; /* 左右に配置 */
+    align-items: center;;
+    padding: 10px 50px; /* 左右の余白を調整 */
+    margin-bottom: 50px;
+    flex-direction: row; /* 要素を横に並べる */
+}
+
+.form-title1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+/* 変更ボタン */
+.edit-button {
+    padding: 10px 60px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin: 0 10px; /* ボタン間にスペースを追加 */
+}
+
+.edit-button:hover {
+    background-color: #0056b3;
+}
+.account-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* アイコンとテキストの間のスペース */
+}
+.account-icon :hover{
+    color: #0ee04d;
+}
+.account-icon a {
+    text-decoration: none;
+    color: #333; /* テキストカラー */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.account-icon a:hover {
+    color: #0ee04d; /* ホバー時の色 */
+}
+
+.account-icon i {
+    font-size: 24px; /* アイコンのサイズ */
+    color: #007bff; /* アイコンの色 */
+}
+.icon-circle {
+    width: 50px; /* 円の幅 */
+    height: 50px; /* 円の高さ */
+    background-color: #007bff; /* 円の背景色 */
+    border-radius: 50%; /* 円形にする */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-circle i {
+    font-size: 20px; /* アイコンのサイズ */
+    color: #ffffff; /* アイコンの色 */
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: left;
+    padding-left: 200px;
+     
+
+}
+.box {
+    width: 650px; /* 四角形の幅 */
+    height: 100px; /* 四角形の高さ */
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    justify-content: flex-start; /* 左寄せ */
+    align-items: center;
+    border-radius: 10px;
+    text-align: left;
+    margin-bottom: 30px;
+    border: 3px solid #ddd;
+    padding-left: 20px; /* 左側にスペース */
+}
+
+.radio-form {
+    display: flex;
+    flex-direction: row; /* 横並びに配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+}
+input[type="radio"] {
+    margin-right: 10px;  /* ここでスペースを調整 */
+}
+
+.text{
+    font-size: 20px;
+}
+.credit-card-info button.submit-button {
+    align-self: flex-end; /* ボタンを右に配置 */
+    margin-top: 20px; /* ボタンと入力欄の間にスペースを追加 */
+}
+.credit-card-info form {
+    display: flex;
+    flex-direction: column;
+    max-height: 1200px;
+}
+
+/* ラベルと入力欄の文字サイズを大きく */
+.credit-card-info label,
+.credit-card-info input {
+    font-size: 1.2rem; /* 文字サイズを大きく */
+}
+
+/* 入力欄の高さを大きく */
+.credit-card-info input {
+    padding: 10px 50px; /* パディングを追加して入力欄の高さを調整 */
+    margin-bottom: 15px; /* 入力欄とラベルの間にスペース */
+    border-radius: 5px; /* 角を丸く */
+    border: 1px solid #ccc; /* ボーダーの色 */
+}
+
+/* ボタンのサイズを大きく */
+.credit-card-info button.submit-button {
+    width: 300px;
+    height: 60px;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 20px;
+    padding: 15px 30px; /* ボタンの内側の余白 */
+    font-size: 1.5rem; /* ボタン文字サイズを大きく */
+    border-radius: 5px; /* ボタンの角を丸く */
+    cursor: pointer; /* ボタンのホバー効果を追加 */
+    background-color: #007bff; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+}
+
+/* ボタンにホバー効果 */
+.credit-card-info button.submit-button:hover {
+    background-color: #45a049; /* ボタンをホバーしたときの背景色 */
+}

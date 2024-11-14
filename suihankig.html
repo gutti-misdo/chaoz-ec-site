@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム画面(ゲスト)</title>
+    <link rel="stylesheet" href="commodity.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <a href="ghome.html">
+            <span class="site-title">チャオズ.com</span>
+            </a>
+            <!-- ここに検索バーを追加 -->
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="検索...">
+                <button class="search-button">検索</button>
+            </div>
+            <!-- ログインボタン -->
+            <button class="login-btn" onclick="handleLogin()">ログイン</button>
+
+            <!-- カートボタン -->
+            <button class="cart-btn">🛒</button>
+        </div>
+
+        <!-- 商品リストを表示 -->
+        <div class="content">
+            <div class="product-container">
+                <div class="product-card">
+                    <div class="main-image-container">
+                        <img id="main-image" src="https://m.media-amazon.com/images/I/51iRtcaj9UL._AC_SX679_.jpg"
+                            alt="メイン画像">
+                    </div>
+
+                    <!-- サムネイル画像 -->
+                    <div class="thumbnail-container">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/51iRtcaj9UL._AC_SX679_.jpg"
+                            alt="商品1">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/61AiS7xXWYL._AC_SX679_.jpg"
+                            alt="商品2">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/61SMrmF31dL._AC_SX679_.jpg"
+                            alt="商品3">
+                        <img class="thumbnail" src="https://m.media-amazon.com/images/I/71DV1hSVBnL._AC_SX679_.jpg"
+                            alt="商品4">
+                    </div>
+                </div>
+
+
+                <div class="product-info">
+                    <!-- 商品タイトル -->
+                    <div class="text">
+                        [山善] 炊飯器 一人暮らし 4合 マイコン式 二人暮らし 3.0mm厚釜 低温調理 炊き分けメニュー6種 保温 予約 玄米 クリーニングモード搭載 グレージュ YJS-CM072(G)
+                    </div>
+
+
+
+                    <!-- レーティング情報 -->
+                    <div class="rating">⭐️ 3.9 / 5（53件の評価）</div>
+
+                    <!-- ベストセラー情報 -->
+                    <div class="note">過去1か月で1万点以上購入されました</div>
+
+
+                    <!-- 価格情報 -->
+                    <div class="price">¥8,980 税込</div>
+                    <!-- 区切り線 -->
+                    <hr class="divider">
+
+                    <!-- 配送情報 -->
+                    <div class="delivery-info">翌朝配送</div>
+
+
+                    <!-- ポイント情報 -->
+                    <div class="points-info">ポイント: 170pt (1%) <span class="note">詳細はこちら</span></div>
+
+
+
+                    <!-- エントリ情報 -->
+                    <div class="offers-info">
+                        【対象者限定】5つのカテゴリー x ブランドセレクションにて1万円以上のご購入で最大10%期間限定ポイント ポイントアップ中
+                        <span class="note">(適用条件あり)</span> <span class="note">細則を確認</span>
+                    </div>
+
+
+
+                    <!-- 法人価格情報 -->
+                    <div class="business-info">
+                        法人価格で最大3%割引となります。無料のビジネスアカウントに登録する
+                    </div><br>
+                    <!-- 区切り線 -->
+                    <hr class="divider"><br>
+                    <!-- カラーオプション -->
+                    <div class="color-options-container">
+                        <div class="product-list">
+                            <div class="product-card00">
+                                <a href="fanheater.html">
+                                    <img class="thumbnail selected"
+                                        src="https://m.media-amazon.com/images/I/61kRBIaEilL._AC_SX679_.jpg" alt="ブラック">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥7,800</p>
+                                    <p class="old-price">¥8,980</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+                            <div class="product-card00">
+                                <a href="fanheaterg.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51iRtcaj9UL._AC_SX679_.jpg" alt="グレージュ">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥8,980</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+                            <div class="product-card00">
+                                <a href="fanheaterg.html">
+                                    <img class="thumbnail"
+                                        src="https://m.media-amazon.com/images/I/51BOT9hxqCL._AC_SX679_.jpg" alt="ホワイト">
+                                </a>
+                                <div class="price-info">
+                                    <!-- 区切り線 -->
+                                    <hr class="divider">
+                                    <p class="price">¥7,800</p>
+                                    <p class="old-price">¥8,980</p>
+                                    <p class="delivery-info">無料配送 翌朝8:00まで</p>
+                                </div>
+                            </div>
+
+                            
+                          
+
+                        </div><br>
+
+                    <div class="additional-info">
+                        <div><strong>ブランド:</strong> YAMAZEN(山善)</div>
+                        <div><strong>容量</strong>:</strong> 0.72 L</div>
+                        <div><strong>商品寸法</strong>:</strong> 24.5奥行き x 21幅 x 21.3高さ cm</div>
+                        <div><strong>電源:</strong>電源コード</div>
+                        <div><strong>色:</strong> グレージュ</div><br>
+                        <!-- この商品について -->
+                        <div class="about-product">
+                            <strong>この商品について:</strong>
+                            <ul>
+                                <li>【【炊き立てご飯をいつでも、おいしく】一人暮らしはもちろんファミリーでも使える最大4合炊きの炊飯器。白米は1合から炊飯可能なので、いつでもおいしい炊き立てご飯が楽しめます。</li>
+                                <li>【お洒落な「キューブ型」】トースターや電子レンジなどのキッチン家電と並べてもお洒落なキューブ型。カップボードに並べてインテリアとしてもお楽しみいただけます。操作部はタッチパネルなので、汚れてもサッとふき取りできてお手入れも簡単です。</li>
+                                <li>【3.0mmの「厚釜」】見た目だけではなく味にもこだわっており、蓄熱性の高い3.0mmの厚釜を採用したことで、ふっくらとした美味しいごはんを炊き上げます。ご飯の炊き分けは、用途に合わせて「省エネ」「白米」「早炊き」「玄米」「おかゆ」「炊込み」からお選びいただけます。</li>
+                                <li>【おかずを調理できる「低温調理」モード搭載】低温調理モードでは、ごちそうメニューのローストビーフやダイエットメニューのサラダチキンなどを、材料を入れて温度と時間を設定するだけで簡単に調理できます。摂氏40度から85度の間を5度単位で設定でき、幅広い料理が楽しめます。</li>
+                                <li>【商品仕様】◇本体サイズ:幅21×奥行24.5×高さ21.3cm ◇本体重量:3.4kg ◇最大炊飯容量(白米):0.72L(4合) ◇電源コードの長さ:1m ◇電源:AC100V(50/60Hz) ◇消費電力:400W ◇1回当たりの炊飯時消費電力:88.8Wh※「省エネ」メニューで炊飯時 ◇年間消費電力:40.9kWh/年※年間消費電力量は省エネ法・特定機器「電気ジャー炊飯器」の測定方法による数値です ◇付属品:計量カップ、しゃもじ、電源コード ◇保証期間:お買い上げ日より1年間。(保証の範囲については、取扱説明書をご確認ください。（一般家庭用以外(業務用など)に使用された場合の故障及び損傷などは保証対象外となります）)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <script src="script.js"></script>
+</body>
+
+</html>

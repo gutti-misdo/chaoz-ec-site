@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購入画面(ゲスト)</title>
+    <link rel="stylesheet" href="buy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- トップバー -->
+        <div class="top-bar">
+            <a href="home.html">
+                <span class="site-title">チャオズ.com</span>
+            </a>
+            <div class="search-bar-container">
+                <input type="text" class="search-bar" placeholder="検索...">
+                <button class="search-button">検索</button>
+            </div>
+            <button class="login-btn" onclick="handleLogin()">ログイン</button>
+            <button class="cart-btn">🛒</button>
+        </div>
+
+        <div class="page-header">
+            <h3 class="form-title1">購入手続き</h3>
+            <a href="home.html">
+                <button type="button" class="edit-button">ホームへ</button>
+            </a>
+        </div>
+
+    </div>
+    <div class="content">
+        <!-- 住所変更フォーム -->
+        <h3 class="form-title"> お支払い確認</h3>
+    </div>
+    <div class="container">
+        <hr class="divider">
+        <div class="box">
+            <div class="radio-form">
+                <input type="radio" name="payment" id="credit-card">
+                <strong class="text">代引き</strong>
+            </div>
+        </div>
+        <div class="box">
+            <div class="radio-form">
+                <input type="radio" name="payment" id="bank-transfer">
+                <strong class="text">クレジットカード</strong>
+            </div>
+        </div>
+        <div class="credit-card-info" style="display: none;">
+            <h3 class="form-title">クレジットカード情報</h3>
+            <form>
+                <label for="card-number">カード番号</label>
+                <input type="text" id="card-number" name="card-number" placeholder="カード番号" required>
+
+                <label for="card-holder">カード名義</label>
+                <input type="text" id="card-holder" name="card-holder" placeholder="カード名義" required>
+
+                <label for="expiry-date">有効期限</label>
+                <input type="month" id="expiry-date" name="expiry-date" required>
+
+                <label for="security-code">セキュリティコード (CVV)</label>
+                <input type="text" id="security-code" name="security-code" placeholder="セキュリティコード" required>
+
+                <button type="submit" class="submit-button">支払い情報を送信</button>
+            </form>
+        </div>
+        <hr class="divider">
+        <a href="buyg3.html">
+            <button type="button" class="edit-button">購入確認</button>
+        </a>
+        <hr class="divider">
+    </div>
+
+    <script src="buy.js"></script>
+</body>
+
+</html>

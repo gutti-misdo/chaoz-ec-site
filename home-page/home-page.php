@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ホーム画面(ゲスト)</title>
-    <link rel="stylesheet" href="ghome.css">
+    <link rel="stylesheet" href="home-page.css">
     
 </head>
 <body>

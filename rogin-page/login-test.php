@@ -1,13 +1,15 @@
 <!-- <?php
-session_start();
-?> -->
+        session_start();
+        ?> -->
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログイン完了</title>
 </head>
+
 <body>
     <h1>ログインテスト</h1>
     <?php
@@ -17,27 +19,21 @@ session_start();
         $sql = $pdo->prepare('select * from customer where email=?');
         $sql->execute([$_POST['email']]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
-
-        if(password_verify($_POST['pass'], $result['password'])) {
+        print_r($result['password']);
+        print($_POST['pass']);
+        if (password_verify($_POST['pass'], $result['password'])) {
             echo "ログイン認証に成功しました。";
             // $_SESSION['email'] = $row['email'];
             // $_SESSION['name'] = $row['customer_name'];
         } else {
             echo "ログイン認証に失敗しました。";
+            echo 'EmailかPasswordが違います';
         }
-
-        
-            
-
-        // if (isset($_SESSION['name'])) {
-        //     echo $_SESSION['name'], 'さん、ようこそ！';
-        // } else {
-        //     echo 'EmailかPasswordが違います';
-        // }
     } catch (PDOException $e) {
         echo '接続失敗: ' . $e->getMessage();
     }
-        $pdo = null;
+    $pdo = null;
     ?>
 </body>
+
 </html>

@@ -19,8 +19,6 @@
         $sql = $pdo->prepare('select * from customer where email=?');
         $sql->execute([$_POST['email']]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
-        print_r($result['password']);
-        print($_POST['pass']);
         if (password_verify($_POST['pass'], $result['password'])) {
             echo "ログイン認証に成功しました。";
             // $_SESSION['email'] = $row['email'];

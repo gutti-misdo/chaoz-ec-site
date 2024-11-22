@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone ECサイトログイン画面</title>
+    <link rel="stylesheet" href="commodity.css">
+</head>
+<body>
+
+    <!-- ナビゲーションバー -->
+    <div class="top-bar">
+        <!-- ハンバーガーメニューとサイトタイトル -->
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+            <div class="hamburger-line"></div>
+        </div>
+        <span class="site-title">チャオズEC</span>
+
+        <!-- 検索バーとボタン -->
+        <div class="search-bar-container">
+            <input type="text" class="search-bar" placeholder="🔍 検索の検索...">
+            <button class="search-button">検索</button>
+            <button class="user-btn">👤</button>
+            <button class="cart-btn">🛒</button>
+        </div>
+    </div>
+
+    <!-- ハンバーガーメニューの内容 -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-content">
+            <button class="close-btn" onclick="toggleMenu()">✖</button>
+            <h1>カテゴリの閲覧</h1>
+            <ul>
+                <h1>
+                <li><a href="index.html">チャオズECホーム <span>🏠</span></a></li>
+                <li><a href="washer.html">洗濯機</a></li>
+                <li><a href="smartphone.html">スマホ</a></li>
+                <li><a href="vacuum.html">掃除機</a></li>
+                <li><a href="stove.html">コンロ</a></li>
+                </h1>
+</ul>
+        </div>
+    </div>
+
+    <!-- カート内容 -->
+    <div class="cart-section">
+       
+        <h3>カートに入れた商品  <form action=".html"><button class="home-btn">ホームへ</button></form></h3>
+        
+        <div class="cart-item">
+            <img src="https://m.media-amazon.com/images/I/51mTG32+mwL._AC_SY300_SX300_.jpg" alt="洗濯機" class="cart-item-image">
+            <div class="cart-item-info">
+                <h1>洗濯機 </h1>
+                <h1 class="price">¥120,000</h1>
+                <button class="remove-btn">削除</button>
+            </div>
+        </div>
+        <hr>
+        <div class="cart-item">
+            <img src="https://m.media-amazon.com/images/I/515dU2Dj41L.__AC_SX342_SY445_QL70_ML2_.jpg" alt="冷蔵庫" class="cart-item-image">
+            <div class="cart-item-info">
+                <h1>冷蔵庫</h1>
+                <h1 class="price">¥390,000</h1>
+                <button class="remove-btn">削除</button>
+            </div>
+        </div>
+        <hr>
+        <div class="cart-total">
+            <p>小計 <span class="total-price">￥510,000</span></p>
+        </div>
+        <button class="checkout-btn">購入に進む</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

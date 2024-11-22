@@ -1,63 +1,86 @@
-window.addEventListener('scroll', function () {
-    const fixedImage = document.querySelector('fixed-image');
-    const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 300) {
-        fixedImage.computedStyleMap.opacity = '0.5';
+// script.js
+function toggleMenu() {
+    const menuOverlay = document.getElementById("menuOverlay");
+    if (menuOverlay.style.display === "block") {
+        menuOverlay.style.display = "none";
     } else {
-        fixedImage.style.opacity = '1';
+        menuOverlay.style.display = "block";
     }
-});
-
-// サムネイル画像を取得
-const thumbnails = document.querySelectorAll('.thumbnail');
-
-// メイン画像を取得
-const mainImage = document.getElementById('main-image');
-
-// 各サムネイルにマウスオーバーイベントを追加
-thumbnails.forEach(thumbnail => {
-    thumbnail.addEventListener('mouseover', () => {
-        // メイン画像のsrcをサムネイルのsrcに変更
-        mainImage.src = thumbnail.src;
-    });
-});
-
-// カラーオプションのボタンを取得
-const colorOptions = document.querySelectorAll('.color-option');
-
-// カラーオプションのクリックイベントを追加
-colorOptions.forEach(option => {
-    option.addEventListener('click', () => {
-        // 現在選択されているカラーオプションから.selectedクラスを削除
-        document.querySelector('.color-option.selected')?.classList.remove('selected');
-
-        // クリックしたオプションに.selectedクラスを追加
-        option.classList.add('selected');
-
-        // カラーに応じたメイン画像を設定（色ごとの画像URLを設定）
-        const color = option.dataset.color;
-        mainImage.src = `https://example.com/images/${color}-image.jpg`; // 画像URLは色ごとに適切に設定してください
-    });
-});
-function handleLogin() {
-    window.location.href = 'loginpc.html'; // login.htmlに遷移
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const stickyElement = document.getElementById('sticky-element');
-    const stopper = document.querySelector('.stopper');
+    const productCards = document.querySelectorAll('.product-card');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                stickyElement.classList.add('stopped'); // 止める
-            } else {
-                stickyElement.classList.remove('stopped'); // スクロール再開
-            }
+    productCards.forEach((card) => {
+        const stars = card.querySelectorAll('#star-rating span');
+        const reviewsList = card.querySelector('#reviews-list');
+        const submitButton = card.querySelector('#submit-review');
+        const averageStars = card.querySelector('#average-stars');
+        const averageScore = card.querySelector('.score');
+        const ratingSelect = card.querySelector('.rating-select');
+
+        let totalRating = 0;
+        let reviewCount = 0;
+        const ratingCounts = [0, 0, 0, 0, 0]; // 5つ星〜1つ星のカウント
+        let selectedRating = 0;
+
+        // 星のクリックイベントを設定
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                selectedRating = index + 1;
+
+                // 星の状態を更新
+                stars.forEach((s, i) => {
+                    s.style.color = i < selectedRating ? 'gold' : 'gray';
+                });
+            });
         });
-    }, { threshold: 1.0 });
 
-    observer.observe(stopper);
+        // レビュー投稿ボタンのイベントを設定
+        submitButton.addEventListener('click', () => {
+            if (selectedRating === 0) {
+                alert('星評価を選択してください！');
+                return;
+            }
+
+            // レビューをリストに追加
+            const reviewDiv = document.createElement('div');
+            reviewDiv.classList.add('review');
+            reviewDiv.innerHTML = `
+                <div class="stars">${'⭐'.repeat(selectedRating)}</div>
+                <p>レビューを投稿しました (${new Date().toLocaleDateString()})</p>
+            `;
+            reviewsList.appendChild(reviewDiv);
+
+            // 星評価データを更新
+            totalRating += selectedRating;
+            reviewCount++;
+            ratingCounts[selectedRating - 1]++;
+
+            // 平均評価を計算
+            const average = (totalRating / reviewCount).toFixed(1);
+            averageScore.textContent = `(${average}/5)`;
+            averageStars.textContent = '⭐'.repeat(Math.round(average)) + '☆'.repeat(5 - Math.round(average));
+
+            // リストボックスを更新
+            updateRatingSelect(ratingCounts, reviewCount, ratingSelect);
+
+            // 星選択をリセット
+            selectedRating = 0;
+            stars.forEach((s) => (s.style.color = 'gray'));
+        });
+
+        // リストボックスを更新する関数
+        function updateRatingSelect(counts, total, selectElement) {
+            const percentages = counts.map((count) => ((count / total) * 100).toFixed(1));
+            selectElement.innerHTML = `
+                <option value="5">5つ星: ${percentages[4]}%</option>
+                <option value="4">4つ星: ${percentages[3]}%</option>
+                <option value="3">3つ星: ${percentages[2]}%</option>
+                <option value="2">2つ星: ${percentages[1]}%</option>
+                <option value="1">1つ星: ${percentages[0]}%</option>
+            `;
+        }
+    });
 });

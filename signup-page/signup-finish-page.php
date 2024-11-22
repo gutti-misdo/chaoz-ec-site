@@ -27,5 +27,8 @@
     }
         $pdo = null;
     ?>
+    <form action="./../login-page/login.php">
+        <button type="submit">ログイン画面へ</button>
+    </form>
 </body>
 </html>

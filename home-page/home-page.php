@@ -13,7 +13,9 @@
         <span class="site-title">チャオズ.com</span>
             <input type="text" class="search-bar" placeholder="検索...">
             <button class="search-button">検索</button>
+            <form action="../login-page/login.php" method ="post">
             <button class="login-btn">ログイン</button>
+            </form>
             <button class="cart-btn">🛒</button>
         </div>
     </div>

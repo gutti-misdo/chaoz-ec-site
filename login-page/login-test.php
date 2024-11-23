@@ -32,6 +32,9 @@
     }
     $pdo = null;
     ?>
+    <form action="../home-page/home-page.php" method="post">
+        <button>ホーム画面へ</button>
+    </form>
 </body>
 
 </html>

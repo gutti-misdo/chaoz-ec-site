@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar {
+    display: flex; /* 要素を横並びに */
+    justify-content: space-between; /* 左右にスペースを作る */
+    align-items: center; /* アイテムを垂直中央揃え */
+    width: 100%;
+    padding: 20px;
+    background-color: #2A3B76;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.site-title {
+    font-size: 24px;
+    color: #E6FA00;
+    font-weight: bold;
+}
+
+.search-bar {
+    width: 600px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    transition: background-color 0.3s ease;
+}
+
+.cart-btn {
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 35px;
+    transition: background-color 0.3s ease;
+}

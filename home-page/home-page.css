@@ -1,4 +1,83 @@
-/* 基本のリセット */
+#kaden-toggle {
+    display: none;
+  }
+  .kaden_btn {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer; 
+    z-index: 999;
+  }
+  .kaden_btn > span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2px;
+    background-color: black;
+  }
+  /*上の棒*/
+  .kaden_btn > span:first-child {
+    transform: translate(-50%, calc(-50% - 0.5rem));
+    transition: transform 0.3s ease;
+  }
+  /*まんなかの棒*/
+  .kaden_btn > span:nth-child(2) {
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+  }
+  /*下の棒*/
+  .kaden_btn > span:last-child {
+    transform: translate(-50%, calc(-50% + 0.5rem));
+    transition: transform 0.3s ease;
+  }
+  /*×の棒*/
+  #kaden-toggle:checked + .kaden_btn > span:first-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  /*×の棒*/
+  #kaden-toggle:checked + .kaden_btn > span:nth-child(2) {
+    opacity: 0;
+  }
+  /*×の棒*/
+  #kaden-toggle:checked + .kaden_btn > span:last-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+ 
+  .kaden {
+    position: absolute;
+    top: 0;
+    left: -100%;/*ここで初期表示が画面外。ボタンおされたら表示される*/
+    width: 100vw;
+    height: 100vh;
+    transition: left 0.3s ease;
+  }
+  #kaden-toggle:checked + .kaden_btn + .kaden {
+    left: 0;
+  }
+  .kaden_inner {
+    width: 33vw;
+    height: 100%;
+    background-color: rgba(217, 245, 117, 0.95);
+    padding: 4rem 1rem;
+    /*margin: 0 0 0 auto;*/
+    overflow: scroll;
+  }
+  .kaden_menu {
+    display: grid;
+    list-style: none;
+    padding: 0;
+  }
+  .kaden_link {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 1.5rem 1rem;
+    border-bottom: solid 1px white;
+  }
+
+  
 * {
     margin: 0;
     padding: 0;
@@ -23,9 +102,12 @@ body {
 
 /* トップバー */
 .top-bar {
-    display: flex; /* 要素を横並びに */
-    justify-content: space-between; /* 左右にスペースを作る */
-    align-items: center; /* アイテムを垂直中央揃え */
+    display: flex;
+    /* 要素を横並びに */
+    justify-content: space-between;
+    /* 左右にスペースを作る */
+    align-items: center;
+    /* アイテムを垂直中央揃え */
     width: 100%;
     padding: 20px;
     background-color: #2A3B76;
@@ -44,9 +126,12 @@ body {
 .search-bar-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* 中央に配置 */
-    flex-grow: 1; /* 残りのスペースを埋める */
-    margin: 0 20px; /* 左右に少しスペースを */
+    justify-content: center;
+    /* 中央に配置 */
+    flex-grow: 1;
+    /* 残りのスペースを埋める */
+    margin: 0 20px;
+    /* 左右に少しスペースを */
 }
 
 .search-bar {
@@ -82,7 +167,8 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    margin-left: 20px;
+    /* 検索バーとカートボタンの間にスペースを追加 */
     transition: background-color 0.3s ease;
 }
 
@@ -106,7 +192,6 @@ body {
     background-color: #e68900;
 }
 
-/* 商品コンテナ */
 .product-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -153,18 +238,22 @@ body {
 .add-to-cart-btn:hover {
     background-color: #0056b3;
 }
+
 .options-container {
     display: flex;
-    flex-wrap: wrap;  /* 画像が親要素の幅を超えた場合に次の行に折り返す */
-    gap: 50px;  /* 画像間の間隔 */
+    flex-wrap: wrap;
+    /* 画像が親要素の幅を超えた場合に次の行に折り返す */
+    gap: 50px;
+    /* 画像間の間隔 */
     margin-top: 20px;
     z-index: 8;
-    justify-content: center; 
+    justify-content: center;
 }
 
 /* カラーオプションの画像 */
 .options-container a img {
-    width: 300px; /* サイズそのまま維持 */
+    width: 300px;
+    /* サイズそのまま維持 */
     height: 300px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -177,11 +266,14 @@ body {
 .options-container a img:hover {
     transform: scale(1.05);
 }
+
 .product-list {
     display: grid;
-    grid-template-columns: repeat(4,1fr); /* 4列に設定 */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4列に設定 */
     gap: 20px;
-    max-width: 1200px; /* 幅を1200pxに拡大 */
+    max-width: 1200px;
+    /* 幅を1200pxに拡大 */
     width: 100%;
     margin: 0 auto;
 }
@@ -199,12 +291,14 @@ body {
     font-size: 14px;
     transition: transform 0.2s;
 }
+
 .product-card:hover {
     transform: scale(1.05);
 }
+
 .product-image {
     width: 100%;
-    height: 200px; 
+    height: 200px;
     aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 8px;
@@ -275,12 +369,16 @@ body {
 .add-to-cart:hover {
     background-color: #F7CA00;
 }
-.video, .product-info {
+
+.video,
+.product-info {
     flex: 1;
 }
+
 .video img {
     width: 100%;
 }
+
 .edit-button {
     padding: 10px 60px;
     background-color: #007bff;
@@ -295,41 +393,56 @@ body {
 .edit-button:hover {
     background-color: #0056b3;
 }
+
 .account-icon {
     display: flex;
     align-items: center;
-    gap: 10px; /* アイコンとテキストの間のスペース */
+    gap: 10px;
+    /* アイコンとテキストの間のスペース */
 }
-.account-icon :hover{
+
+.account-icon :hover {
     color: #0ee04d;
 }
+
 .account-icon a {
     text-decoration: none;
-    color: #333; /* テキストカラー */
+    color: #333;
+    /* テキストカラー */
     font-size: 16px;
     display: flex;
     align-items: center;
 }
 
 .account-icon a:hover {
-    color: #0ee04d; /* ホバー時の色 */
+    color: #0ee04d;
+    /* ホバー時の色 */
 }
 
 .account-icon i {
-    font-size: 24px; /* アイコンのサイズ */
-    color: #ffffff; /* アイコンの色 */
+    font-size: 24px;
+    /* アイコンのサイズ */
+    color: #ffffff;
+    /* アイコンの色 */
 }
+
 .icon-circle {
-    width: 50px; /* 円の幅 */
-    height: 50px; /* 円の高さ */
-    background-color: #0056b3; /* 円の背景色 */
-    border-radius: 50%; /* 円形にする */
+    width: 50px;
+    /* 円の幅 */
+    height: 50px;
+    /* 円の高さ */
+    background-color: #0056b3;
+    /* 円の背景色 */
+    border-radius: 50%;
+    /* 円形にする */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .icon-circle i {
-    font-size: 20px; /* アイコンのサイズ */
-    color: #ffffff; /* アイコンの色 */
+    font-size: 20px;
+    /* アイコンのサイズ */
+    color: #ffffff;
+    /* アイコンの色 */
 }

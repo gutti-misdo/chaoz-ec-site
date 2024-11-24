@@ -202,13 +202,11 @@ body {
 .product-card:hover {
     transform: scale(1.05);
 }
-.product-image {
-    width: 100%;
-    height: 200px; 
-    aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    margin-bottom: 8px;
-}
+img {
+    
+    max-height: 49%;
+   }
+   
 
 .product-title {
     font-size: 1em;

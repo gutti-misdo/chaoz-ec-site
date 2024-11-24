@@ -1,6 +1,6 @@
-<!-- <?php
-        session_start();
-        ?> -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -20,9 +20,16 @@
         $sql->execute([$_POST['email']]);
         $result = $sql->fetch(PDO::FETCH_ASSOC);
         if (password_verify($_POST['pass'], $result['password'])) {
-            echo "ログイン認証に成功しました。";
-            // $_SESSION['email'] = $row['email'];
-            // $_SESSION['name'] = $row['customer_name'];
+            $_SESSION['customer'] = [
+                'id' => $result['customer_id'],
+                'name' => $result['custormer_name'],
+                'address' => $result['address'],
+                'email' => $result['email'],
+                'buliding_name' => $result['buliding_name'],
+                'room_number' => $result['room_number'],
+                'post_code' => $result['post_code']
+            ];
+            echo 'いらっしゃいませ、', $_SESSION['customer']['name'], 'さん。';
         } else {
             echo "ログイン認証に失敗しました。";
             echo 'EmailかPasswordが違います';

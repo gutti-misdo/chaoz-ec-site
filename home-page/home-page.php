@@ -33,6 +33,13 @@ session_start();
                     ?>
                 </button>
             </form>
+            <form action="logout-output.php" method="post">
+                <?php
+                if (isset($_SESSION['customer'])) {
+                    echo '<button class="login-btn" name="logout">ログアウト</button>';
+                }
+                ?>
+            </form>
             <button class="cart-btn">🛒</button>
         </div>
     </div>

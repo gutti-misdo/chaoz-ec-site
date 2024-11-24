@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +23,15 @@
                 <button class="search-button">検索</button>
             </form>
             <form action="../login-page/login.php" method="post">
-                <button class="login-btn">ログイン</button>
+                <button class="login-btn">
+                    <?php
+                    if (isset($_SESSION['customer']['name'])) {
+                        echo htmlspecialchars($_SESSION['customer']['name'], ENT_QUOTES, 'UTF-8');
+                    } else {
+                        echo 'ログイン';
+                    }
+                    ?>
+                </button>
             </form>
             <button class="cart-btn">🛒</button>
         </div>

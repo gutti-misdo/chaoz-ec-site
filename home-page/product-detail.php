@@ -2,12 +2,12 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ホーム画面</title>
+    <title>商品詳細画面</title>
     <link rel="stylesheet" href="./css/home-page.css">
     <link rel="stylesheet" href="./css/product-card.css">
 </head>
@@ -43,27 +43,32 @@ session_start();
             <button class="cart-btn">🛒</button>
         </div>
     </div>
-    <div class="product-list">
-        <?php
-        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+    <?php
+    $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
 
-        foreach ($pdo->query('select * from product') as $row) {
-            echo '<div class="l-wrapper">';
-            echo '<a href="product-detail.php?id=', $row['product_id'], '"class="card-link">';
-            echo '<article class="card">';
-            echo '<figure class="card__thumbnail">';
-            echo '<img src="', $row['photograph'], '" class="card__image">';
-            echo '</figure>';
-            echo '<h3 class="card__title">', $row['product_name'], '</h3>';
-            echo '<p class="card__text">', $row['explanation'], '</p>';
-            echo '<p class="card__text -number">¥', number_format($row['price']), '</p>';
-            echo '</article>';
-            echo '</a>';
-            echo '</div>';
+    if (isset($_GET['id'])) {
+        $id = (int)$_GET['id']; // IDを整数として取得（セキュリティ対策）
+        $stmt = $pdo->prepare('SELECT * FROM product WHERE product_id = ?');
+        $stmt->execute([$id]);
+        $product = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($product) {
+            echo '<h1>', $product['product_name'], '</h1>';
+            echo '<img src="', $product['photograph'], '" alt="Product Image">';
+            echo '<p>説明: ', $product['explanation'], '</p>';
+            echo '<p>価格: ¥', number_format($product['price']), '</p>';
+            echo '<p>個数:<select name="count">';
+            for ($i = 1; $i < 10; $i++) {
+                echo '<option value="', $i, '">', $i, '</option>';
+            }
+            echo '</select></p>';
+            echo '<p><input type=submit value="カートに追加"></p>';
+        } else {
+            echo '指定された商品は見つかりませんでした。';
         }
+    }
 
-        ?>
-    </div>
+    ?>
 </body>
 
 </html>

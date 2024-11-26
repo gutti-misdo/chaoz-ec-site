@@ -57,15 +57,20 @@ session_start();
             echo '<img src="', $product['photograph'], '" alt="Product Image">';
             echo '<p>説明: ', $product['explanation'], '</p>';
             echo '<p>価格: ¥', number_format($product['price']), '</p>';
-            echo '<p>個数:<select name="count">';
+            echo '<form action="cart-add.php" method="post">';
+            echo '<input type="hidden" name="product_id" value="', $product['product_id'], '">';
+            echo '<p>個数:<select name="quantity">';
             for ($i = 1; $i < 10; $i++) {
                 echo '<option value="', $i, '">', $i, '</option>';
             }
             echo '</select></p>';
             echo '<p><input type=submit value="カートに追加"></p>';
+            echo '</form>';
         } else {
             echo '指定された商品は見つかりませんでした。';
         }
+    } else {
+        echo '商品IDが指定されていません。';
     }
 
     ?>

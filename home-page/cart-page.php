@@ -13,6 +13,17 @@ session_start();
 <body>
     <h1>カートの内容</h1>
     <?php
+    if (isset($_SESSION['message'])) {
+        echo '<p style="color: green;">' . htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8') . '</p>';
+        unset($_SESSION['message']); // メッセージを一度表示したら削除
+    }
+    if (isset($_SESSION['error'])) {
+        echo '<p style="color: red;">' . htmlspecialchars($_SESSION['error'], ENT_QUOTES, 'UTF-8') . '</p>';
+        unset($_SESSION['error']); // エラーを一度表示したら削除
+    }
+    ?>
+
+    <?php
     try {
         $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
 

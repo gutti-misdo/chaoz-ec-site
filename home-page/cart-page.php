@@ -21,14 +21,20 @@ session_start();
         echo '<p style="color: red;">' . htmlspecialchars($_SESSION['error'], ENT_QUOTES, 'UTF-8') . '</p>';
         unset($_SESSION['error']); // エラーを一度表示したら削除
     }
-    ?>
 
-    <?php
     try {
         $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
 
         $customer_id = $_SESSION['customer']['id'] ?? null;
         $guest_id = $_SESSION['guest_id'] ?? null;
+        
+        // ゲスト情報の確認と作成
+        if (!$customer_id && !$guest_id) {
+            $stmt = $pdo->prepare('INSERT INTO guest (session_id, session_create_time, session_update_time) VALUES (?, NOW(), NOW())');
+            $stmt->execute([session_id()]);
+            $guest_id = $pdo->lastInsertId();
+            $_SESSION['guest_id'] = $guest_id;
+        }
 
         $cart_id = null;
 
@@ -42,9 +48,11 @@ session_start();
             $cart_id = $stmt->fetchColumn();
         }
 
+        // カートが見つからない場合、新しいカートを作成
         if (!$cart_id) {
-            echo '<p>カートは空です。</p>';
-            exit;
+            $stmt = $pdo->prepare('INSERT INTO shoppingcart (customer_id, guest_id) VALUES (?, ?)');
+            $stmt->execute([$customer_id, $guest_id]);
+            $cart_id = $pdo->lastInsertId();
         }
 
         // カートの内容を取得
@@ -63,7 +71,7 @@ session_start();
         $cart_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if (empty($cart_items)) {
-            echo '<p>カートは空です。</p>';
+            echo '<p>カートに商品がありません。</p>';
         } else {
             echo '<table border="1">';
             echo '<tr>';

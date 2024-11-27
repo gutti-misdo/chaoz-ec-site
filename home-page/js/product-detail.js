@@ -1,4 +1,4 @@
-/*拡大鏡のjs*/ 
+/*拡大鏡のjsです*/ 
 
 document.addEventListener('mousemove', function(e) {
     var magnifier = document.querySelector('.magnifier');

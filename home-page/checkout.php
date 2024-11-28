@@ -88,6 +88,7 @@ session_start();
             <p>住所: <textarea name="address" required><?php echo htmlspecialchars($customer_info['address'] ?? '', ENT_QUOTES, 'UTF-8'); ?></textarea></p>
         <?php endif; ?>
         <button type="submit">購入を確定</button>
+        <p><a href="home-page.php">ホームに戻る</a></p>
     </form>
 </body>
 </html>

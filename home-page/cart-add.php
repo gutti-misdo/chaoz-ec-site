@@ -8,12 +8,12 @@ $customer_id = $_SESSION['customer']['id'] ?? null;
 $guest_id = $_SESSION['guest_id'] ?? null;
 
 //　ゲストIDがない場合、新しく作成
-if (!$guest_id) {
+if (!isset($_SESSION['guest_id'])) {
     $stmt = $pdo->prepare('INSERT INTO guest (session_id, session_create_time, session_update_time) VALUES (?, NOW(), NOW())');
     $stmt->execute([session_id()]);
-    $guest_id = $pdo->lastInsertId();
-    $_SESSION['guest_id'] = $guest_id;
+    $_SESSION['guest_id'] = $pdo->lastInsertId();
 }
+
 
 // product-detailのPOSTから商品IDと数量を取得
 $product_id = isset($_POST['product_id']) ? (int)$_POST['product_id'] : 0;
@@ -34,7 +34,7 @@ try {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE customer_id = ?');
         $stmt->execute([$customer_id]);
         $cart_id = $stmt->fetchColumn();
-    } 
+    }
     // ゲストの場合のカートID取得
     elseif ($guest_id) {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE guest_id = ?');
@@ -73,4 +73,3 @@ try {
     $pdo->rollBack();
     die('エラー:' . $e->getMessage());
 }
-?>

@@ -40,7 +40,9 @@ session_start();
                 }
                 ?>
             </form>
+            <form action="cart-page.php">
             <button class="cart-btn">🛒</button>
+            </form>
         </div>
     </div>
     <div class="product-list">

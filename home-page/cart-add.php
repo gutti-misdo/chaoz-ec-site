@@ -34,7 +34,7 @@ try {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE customer_id = ?');
         $stmt->execute([$customer_id]);
         $cart_id = $stmt->fetchColumn();
-    } 
+    }
     // ゲストの場合のカートID取得
     elseif ($guest_id) {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE guest_id = ?');
@@ -73,4 +73,3 @@ try {
     $pdo->rollBack();
     die('エラー:' . $e->getMessage());
 }
-?>

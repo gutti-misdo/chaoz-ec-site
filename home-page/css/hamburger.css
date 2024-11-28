@@ -1,0 +1,105 @@
+#kaden-toggle {
+    display: none;
+}
+
+.kaden_btn {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.kaden_btn>span {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2rem;
+    height: 2px;
+    background-color: white;
+}
+
+/*上の棒*/
+.kaden_btn>span:first-child {
+    transform: translate(-50%, calc(-50% - 0.5rem));
+    transition: transform 0.3s ease;
+}
+
+/*まんなかの棒*/
+.kaden_btn>span:nth-child(2) {
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+}
+
+/*下の棒*/
+.kaden_btn>span:last-child {
+    transform: translate(-50%, calc(-50% + 0.5rem));
+    transition: transform 0.3s ease;
+}
+
+/*×の棒*/
+#kaden-toggle:checked+.kaden_btn>span:first-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/*×の棒*/
+#kaden-toggle:checked+.kaden_btn>span:nth-child(2) {
+    opacity: 0;
+}
+
+/*×の棒*/
+#kaden-toggle:checked+.kaden_btn>span:last-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.kaden {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    /*ここで初期表示が画面外。ボタンおされたら表示される*/
+    width: 100vw;
+    height: 100vh;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+#kaden-toggle:checked+.kaden_btn+.kaden {
+    left: 0;
+}
+
+.kaden_inner {
+    width: 33vw;
+    height: 100%;
+    background-color: #2a3b76df;
+    padding: 4rem 1rem;
+    overflow: scroll;
+}
+
+.kaden_menu {
+    list-style: none;
+    padding: 0;
+}
+
+.kaden_item {
+    margin-bottom: 1rem;
+}
+
+.kaden_link {
+    display: flex;
+    align-items: center;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 1.5rem 1rem;
+    border-bottom: solid 1px #bdc3c7;
+    transition: background-color 0.3s ease;
+}
+
+.kaden_link:hover {
+    background-color:  #ffdc19;
+}
+
+.kaden_icon {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}

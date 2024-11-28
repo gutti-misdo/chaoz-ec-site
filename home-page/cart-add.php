@@ -1,15 +1,25 @@
 <?php
 session_start();
-?>
-<?php
+
 $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
 
+// ログインユーザーまたはゲストの判定
 $customer_id = $_SESSION['customer']['id'] ?? null;
 $guest_id = $_SESSION['guest_id'] ?? null;
 
+//　ゲストIDがない場合、新しく作成
+if (!$guest_id) {
+    $stmt = $pdo->prepare('INSERT INTO guest (session_id, session_create_time, session_update_time) VALUES (?, NOW(), NOW())');
+    $stmt->execute([session_id()]);
+    $guest_id = $pdo->lastInsertId();
+    $_SESSION['guest_id'] = $guest_id;
+}
+
+// product-detailのPOSTから商品IDと数量を取得
 $product_id = isset($_POST['product_id']) ? (int)$_POST['product_id'] : 0;
 $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 1;
 
+//　入力チェック
 if (!$product_id || $quantity <= 0) {
     die('不正なリクエストです。');
 }
@@ -19,11 +29,14 @@ try {
 
     $cart_id = null;
 
+    // ログインしている場合のカートID取得
     if ($customer_id) {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE customer_id = ?');
         $stmt->execute([$customer_id]);
         $cart_id = $stmt->fetchColumn();
-    } elseif ($guest_id) {
+    } 
+    // ゲストの場合のカートID取得
+    elseif ($guest_id) {
         $stmt = $pdo->prepare('SELECT cart_id FROM shoppingcart WHERE guest_id = ?');
         $stmt->execute([$guest_id]);
         $cart_id = $stmt->fetchColumn();

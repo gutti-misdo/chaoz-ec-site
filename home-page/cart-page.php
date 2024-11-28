@@ -72,6 +72,7 @@ session_start();
 
         if (empty($cart_items)) {
             echo '<p>カートに商品がありません。</p>';
+            echo '<p><a href="home-page.php">ホームに戻る</a></p>';
         } else {
             echo '<table border="1">';
             echo '<tr>';
@@ -112,6 +113,7 @@ session_start();
 
             echo '<form action="checkout.php" method="post">';
             echo '<button type="submit">購入手続きへ進む</button>';
+            echo '<p><a href="home-page.php">ホームに戻る</a></p>';
             echo '</form>';
         }
     } catch (Exception $e) {

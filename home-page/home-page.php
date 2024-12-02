@@ -17,45 +17,9 @@ session_start();
 <body>
     <div class="container">
         <div class="top-bar">
-            <input type="checkbox" id="kaden-toggle">
-            <label for="kaden-toggle" class="kaden_btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav class="kaden">
-                <div class="kaden_inner">
-                    <ul class="kaden_menu">
-                        <li class="kaden_item">
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🧺</span>洗濯機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🔥</span>コンロ
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">📱</span>スマートフォン
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🧹</span>掃除機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">❄️</span>冷蔵庫
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🍲</span>電子レンジ
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🌬️</span>扇風機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">💨</span>ドライヤー
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
+            <?php
+            include 'hamburger.php'; 
+            ?>
             <form action="home-page.php">
                 <button class="site-title">チャオズ.com</button>
             </form>
@@ -106,19 +70,9 @@ session_start();
         }
         ?>
     </div>
-    <div class="category-list">
-        <h2>CATEGORY</h2>
-        <ul class="category-menu">
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">🧺</span> <span>洗濯機</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">🔥</span> <span>コンロ</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">📱</span> <span>スマートフォン</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">🧹</span> <span>掃除機</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">❄️</span> <span>冷蔵庫</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">🍲</span> <span>電子レンジ</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">🌬️</span> <span>扇風機</span> </a> </li>
-            <li class="category-item"> <a class="category-link" href="#"> <span class="category-icon">💨</span> <span>ドライヤー</span> </a> </li>
-        </ul>
-    </div>
+    <?php
+    include 'category-list.php'; 
+    ?>
 </body>
 
 </html>

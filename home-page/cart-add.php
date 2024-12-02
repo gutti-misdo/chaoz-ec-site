@@ -77,7 +77,7 @@ session_start();
             echo '<div class="input-field">';
             echo '<h2>カートに商品を追加しました。</h2>';
             echo '</div>';
-            echo '<a href="cart-page.php" class="cart-look-button">カートを見る</a>';
+            echo '<a href="cart-page.php" class="cart-look-button">カートを見る</a><br><br>';
             echo '<p><a href="home-page.php" class="home-button">ホーム画面へ</a></p>';
         } catch (Exception $e) {
             $pdo->rollBack();

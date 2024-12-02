@@ -138,8 +138,8 @@ body {
 .submit-button {
     width: 30%;
     padding: 12px;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     border: none;
     border-radius: 10px;
     font-size: 16px;
@@ -200,8 +200,8 @@ body {
 /* 変更ボタン */
 .edit-button {
     padding: 10px 60px;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     border: none;
     border-radius: 10px;
     cursor: pointer;

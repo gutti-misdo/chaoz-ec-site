@@ -62,7 +62,8 @@ label {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 20px;
-    align-self: center;
+    align-items: center;
+
 }
 
 .login-button:hover {

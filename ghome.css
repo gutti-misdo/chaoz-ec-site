@@ -185,11 +185,38 @@ body {
     width: 100%;
     margin: 0 auto;
 }
+.product-list1 {
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* 4列に設定 */
+    gap: 20px;
+    max-width: 1200px; /* 幅を1200pxに拡大 */
+    width: 100%;
+    margin: 0 auto;
+}
+
 
 
 
 .product-card {
     width: 250px;
+    color: #ffdde1;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px;
+    text-align: left;
+    font-size: 14px;
+    transition: transform 0.2s;
+    background:rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+}
+.product-card1 {
+    width:330px;;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -198,6 +225,9 @@ body {
     text-align: left;
     font-size: 14px;
     transition: transform 0.2s;
+}
+.product-card1:hover {
+    transform: scale(1.05);
 }
 .product-card:hover {
     transform: scale(1.05);
@@ -208,7 +238,16 @@ body {
     aspect-ratio: 1 / 1;
     border-radius: 8px;
     margin-bottom: 8px;
+    
 }
+.product-image1 {
+    width: 300px;
+    height: 400px; 
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
 
 .product-title {
     font-size: 1em;
@@ -216,6 +255,18 @@ body {
     margin: 8px 0;
     line-height: 1.4em;
     font-weight: bold;
+}
+
+.product-title1 {
+    font-size: 1em;
+    color: #333;
+    margin: 8px 0;
+    line-height: 1.4em;
+    font-weight: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color:#007bff;
 }
 
 .star-rating {

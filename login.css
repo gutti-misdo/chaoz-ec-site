@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    width: 400px;
+    width: 500px;
     padding: 40px 30px;
     border-radius: 10px;
     background-color: #ffffff;
@@ -34,10 +34,10 @@ body {
 }
 
 .login-button {
-    width: 100%;
+    width: 500px;
     padding: 12px;
-    background-color: #007bff;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -53,8 +53,8 @@ body {
 .signup-button {
     width: 100%;
     padding: 12px;
-    background-color: #28a745;
-    color: white;
+    background-color: #FFD700;
+    color: black;
     border: none;
     border-radius: 5px;
     font-size: 16px;

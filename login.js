@@ -1,6 +1,6 @@
 
 function handleLogin() {
-    window.location.href = 'nextlogin.html'; // nextlogin.htmlに遷移
+    window.location.href = 'home.html'; // nextlogin.htmlに遷移
 }
 
 function handleSignup() {

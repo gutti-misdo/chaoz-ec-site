@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.login-out {
+    width: 20%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto;
+    /* 中央に配置 */
+    margin-top: 10px;
+    display: block;
+    /* ブロック要素に変更 */
+}
+
+.separator {
+    border-bottom: 0.5px solid #d7d5d5;
+    /* 線の幅を1pxに設定 */
+    width: 85%;
+    /* 線の幅を80%に設定 */
+    margin: 20px auto;
+    /* 中央に配置 */
+    margin-bottom: 50px;
+}
+
+
+.container2 {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.container2 h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.current-address {
+    margin-bottom: 20px;
+}
+
+.current-address p {
+    color: #555;
+    font-size: 16px;
+    margin: 5px 0;
+    
+}
+
+.address-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.address-form input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.address-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #f78400;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.address-form input[type="submit"]:hover {
+    background-color: #cb9134;
+}
+
+.home-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+}

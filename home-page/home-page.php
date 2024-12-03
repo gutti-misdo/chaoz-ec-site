@@ -27,24 +27,19 @@ session_start();
                 <input type="text" name="keyword" class="search-bar" placeholder="検索...">
                 <button class="search-button">検索</button>
             </form>
-            <form action="../login-page/login.php" method="post">
-                <button class="login-btn">
                     <?php
                     if (isset($_SESSION['customer']['name'])) {
-                        echo htmlspecialchars($_SESSION['customer']['name'], ENT_QUOTES, 'UTF-8');
+                            echo '<form action="my-page.php" method="post">';
+                            echo '<button class="akaunt-btn" name="akaunt">👤</button>';
+                            echo '</form>';
                     } else {
+                        echo '<form action="../login-page/login.php" method="post">';
+                        echo '<button class="login-btn">';
                         echo 'ログイン';
+                        echo '</button>';
+                        echo '</form>';
                     }
                     ?>
-                </button>
-            </form>
-            <form action="logout-output.php" method="post">
-                <?php
-                if (isset($_SESSION['customer'])) {
-                    echo '<button class="login-btn" name="logout">ログアウト</button>';
-                }
-                ?>
-            </form>
             <form action="cart-page.php">
             <button class="cart-btn">🛒</button>
             </form>

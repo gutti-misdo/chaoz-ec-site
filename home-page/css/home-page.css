@@ -81,3 +81,14 @@ body {
     font-size: 35px;
     transition: background-color 0.3s ease;
 }
+
+.akaunt-btn{
+    padding: 10px 20px;
+    background-color: #2A3B76;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
+    transition: background-color 0.3s ease;
+}

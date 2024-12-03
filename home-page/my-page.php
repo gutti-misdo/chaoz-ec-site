@@ -16,45 +16,10 @@ session_start();
 <body>
     <div class="container">
         <div class="top-bar">
-            <input type="checkbox" id="kaden-toggle">
-            <label for="kaden-toggle" class="kaden_btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav class="kaden">
-                <div class="kaden_inner">
-                    <ul class="kaden_menu">
-                        <li class="kaden_item">
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🧺</span>洗濯機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🔥</span>コンロ
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">📱</span>スマートフォン
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🧹</span>掃除機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">❄️</span>冷蔵庫
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🍲</span>電子レンジ
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">🌬️</span>扇風機
-                            </a>
-                            <a class="kaden_link" href="#">
-                                <span class="kaden_icon">💨</span>ドライヤー
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
+            <?php
+            include 'hamburger.php';
+            ?>
+            
             <form action="home-page.php">
                 <button class="site-title">チャオズ.com</button>
             </form>
@@ -62,21 +27,10 @@ session_start();
                 <input type="text" name="keyword" class="search-bar" placeholder="検索...">
                 <button class="search-button">検索</button>
             </form>
-            <form action="../login-page/login.php" method="post">
-                <button class="login-btn">
-                    <?php
-                    if (isset($_SESSION['customer']['name'])) {
-                        echo htmlspecialchars($_SESSION['customer']['name'], ENT_QUOTES, 'UTF-8');
-                    } else {
-                        echo 'ログイン';
-                    }
-                    ?>
-                </button>
-            </form>
-            <form action="logout-output.php" method="post">
+            <form action="my-page.php" method="post">
                 <?php
                 if (isset($_SESSION['customer'])) {
-                    echo '<button class="login-btn" name="logout">ログアウト</button>';
+                    echo '<button class="akaunt-btn" name="akunt">👤</button>';
                 }
                 ?>
             </form>
@@ -101,15 +55,19 @@ session_start();
     <div class="container2">
         <h1>住所変更</h1>
         <div class="current-address">
-        <?php
-        if (isset($_SESSION['customer'])) {
-            echo'<h3>現在の住所</h3>';
-            echo'<p>住所:' ;echo htmlspecialchars($_SESSION['customer']['address'], ENT_QUOTES, 'UTF-8'),'</p>';
-            echo'<p>建物名:' ;echo htmlspecialchars($_SESSION['customer']['buliding_name'], ENT_QUOTES, 'UTF-8'), '</p>';
-            echo'<p>部屋番号:' ;echo htmlspecialchars($_SESSION['customer']['room_number'], ENT_QUOTES, 'UTF-8'), '</p>';
-            echo'<p>郵便番号:' ; echo htmlspecialchars($_SESSION['customer']['post_code'], ENT_QUOTES, 'UTF-8'),'</p>';
-        }
-        ?>
+            <?php
+            if (isset($_SESSION['customer'])) {
+                echo '<h3>現在の住所</h3>';
+                echo '<p>住所:';
+                echo htmlspecialchars($_SESSION['customer']['address'], ENT_QUOTES, 'UTF-8'), '</p>';
+                echo '<p>建物名:';
+                echo htmlspecialchars($_SESSION['customer']['buliding_name'], ENT_QUOTES, 'UTF-8'), '</p>';
+                echo '<p>部屋番号:';
+                echo htmlspecialchars($_SESSION['customer']['room_number'], ENT_QUOTES, 'UTF-8'), '</p>';
+                echo '<p>郵便番号:';
+                echo htmlspecialchars($_SESSION['customer']['post_code'], ENT_QUOTES, 'UTF-8'), '</p>';
+            }
+            ?>
         </div>
         <form action="my-page-finish.php" method="post" class="address-form">
             <label for="new_address">新しい住所:</label>

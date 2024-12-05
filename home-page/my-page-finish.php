@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="./css/my-page-finish.css">
 <?php
 session_start();
-if (!isset($_SESSION['customer'])) {/*ログインしていないユーザーが住所変更ページにアクセスしようとした場合、自動的にログインページに移動し*/
-    header("login.php");
-    exit();
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_address = $_POST['new_address'];

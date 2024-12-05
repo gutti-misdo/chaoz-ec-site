@@ -11,6 +11,7 @@ session_start();
 </head>
 
 <body>
+    <?php include 'home-head.php' ?>
     <h1>カートの内容</h1>
     <?php
     if (isset($_SESSION['message'])) {

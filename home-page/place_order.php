@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include 'home-head.php';
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: checkout.php');
     exit;

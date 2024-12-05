@@ -6,33 +6,18 @@
 </label>
 <nav class="kaden">
     <div class="kaden_inner">
-        <ul class="kaden_menu">
-            <li class="kaden_item">
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">🧺</span>洗濯機
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">🔥</span>コンロ
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">📱</span>スマートフォン
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">🧹</span>掃除機
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">❄️</span>冷蔵庫
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">🍲</span>電子レンジ
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">🌬️</span>扇風機
-                </a>
-                <a class="kaden_link" href="#">
-                    <span class="kaden_icon">💨</span>ドライヤー
-                </a>
-            </li>
-        </ul>
+        <?php
+        include '../db-connect.php';
+
+        echo '<ul class="kaden_menu">';
+        foreach ($pdo->query('SELECT * FROM category') as $category) {
+            echo '<li class="kaden_item">';
+            echo '<a class="kaden_link" href="category-out.php?category_id=' . $category['category_id'] . '">';
+            echo htmlspecialchars($category['category_name'], ENT_QUOTES, 'UTF-8');
+            echo '</a>';
+            echo '</li>';
+        }
+        echo '</ul>';
+        ?>
     </div>
 </nav>

@@ -47,7 +47,7 @@ session_start();
     </div>
     <div class="product-list">
         <?php
-        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+        include '../db-connect.php';
 
         foreach ($pdo->query('select * from product') as $row) {
             echo '<div class="l-wrapper">';

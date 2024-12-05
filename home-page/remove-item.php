@@ -3,7 +3,7 @@ session_start();
 
 try {
     // データベース接続
-    $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+    include '../db-connect.php';
 
     // POSTデータから削除対象のカートアイテムIDと削除する数量を取得
     $cart_item_id = isset($_POST['cart_item_id']) ? (int)$_POST['cart_item_id'] : 0;

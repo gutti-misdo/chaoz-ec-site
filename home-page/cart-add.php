@@ -8,7 +8,7 @@ session_start();
     <div class="container">
         <?php
 
-        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+        include '../db-connect.php';
 
         // ログインユーザーまたはゲストの判定
         $customer_id = $_SESSION['customer']['id'] ?? null;

@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+include '../db-connect.php';
 $customer_id = $_SESSION['customer']['id'] ?? null;
 $guest = isset($_SESSION['guest_id']) && !$customer_id;
 

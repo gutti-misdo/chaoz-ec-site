@@ -11,6 +11,7 @@ session_start();
 </head>
 
 <body>
+    <?php include 'home-head.php' ?>
     <h1>カートの内容</h1>
     <?php
     if (isset($_SESSION['message'])) {
@@ -23,7 +24,7 @@ session_start();
     }
 
     try {
-        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+        include '../db-connect.php';
 
         $customer_id = $_SESSION['customer']['id'] ?? null;
         $guest_id = $_SESSION['guest_id'] ?? null;

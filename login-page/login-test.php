@@ -16,7 +16,7 @@ session_start();
         <h1>ようこそ！</h1>
         <?php
         try {
-            $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+            include '../db-connect.php';
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $sql = $pdo->prepare('select * from customer where email=?');
             $sql->execute([$_POST['email']]);

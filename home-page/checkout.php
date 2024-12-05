@@ -3,15 +3,18 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>注文確認</title>
 </head>
+
 <body>
+    <?php include 'home-head.php' ?>
     <h1>注文内容の確認</h1>
     <?php
-    $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+    include '../db-connect.php';
 
     $customer_id = $_SESSION['customer']['id'] ?? null; // ログイン済み顧客のID
     $guest = isset($_SESSION['guest_id']) && !$customer_id; // ゲストかどうかを判定
@@ -91,4 +94,5 @@ session_start();
         <p><a href="home-page.php">ホームに戻る</a></p>
     </form>
 </body>
+
 </html>

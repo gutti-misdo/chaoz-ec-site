@@ -1,10 +1,6 @@
 <link rel="stylesheet" href="./css/my-page-finish.css">
 <?php
 session_start();
-if (!isset($_SESSION['customer'])) {/*ログインしていないユーザーが住所変更ページにアクセスしようとした場合、自動的にログインページに移動し*/
-    header("login.php");
-    exit();
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_address = $_POST['new_address'];
@@ -14,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $customer_id = $_SESSION['customer']['id'];
 
     try {
-        $pdo = new PDO('mysql:host=mysql311.phy.lolipop.lan;dbname=LAA1553900-chaoz;charset=utf8', 'LAA1553900', 'Pass1105');
+        include '../db-connect.php';
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "UPDATE customer SET address=?, buliding_name=?, room_number=?, post_code=? WHERE customer_id=?";

@@ -4,13 +4,13 @@ img {
 }
 
 .product-list {
+    flex-grow: 1; /* カードリストをスクロール可能に */
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
     gap: 1rem;
-    /* カード間のスペース */
-    padding-left: 1rem;
-    /* 左側に余白を追加 */
+    padding: 80px 1rem 1rem; /* ヘッダー分の余白を上部に追加 */
+    overflow-y: auto; /* 縦スクロールを有効化 */
 }
 
 .l-wrapper {
@@ -35,12 +35,9 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* 上部と下部を均等配置 */
     width: 100%;
     height: 350px;
-    /* カード全体の高さを固定 */
     overflow: hidden;
-    /* はみ出しを防止 */
 }
 
 .card__thumbnail {

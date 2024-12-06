@@ -13,8 +13,9 @@ session_start();
     <link rel="stylesheet" href="./css/hamburger.css">
 </head>
 
-<body>
+
     <?php include 'home-head.php' ?>
+<body>
     <h1>マイページ</h1>
 
     <form action="logout-output.php" method="post">

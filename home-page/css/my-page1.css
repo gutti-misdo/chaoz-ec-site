@@ -3,6 +3,7 @@ body {
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    padding-top: 100px; 
 }
 
 .login-out {

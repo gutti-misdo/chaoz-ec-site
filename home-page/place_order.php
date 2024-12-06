@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./css/place-order.css">
 <?php
 session_start();
 
@@ -79,9 +80,14 @@ try {
     $stmt->execute([$cart_id]);
 
     $pdo->commit();
-
-    echo '<p>購入が完了しました！</p>';
-    echo '<p><a href="home-page.php">ホームに戻る</a></p>';
+    echo '<div class="tainer">';
+    echo '<div class="container3">';
+        echo '<div class="input-field">';
+        echo '<h2>購入が完了しました！</h2>';
+        echo '</div>';
+        echo '<p><a href="home-page.php" class="home-button">ホームに戻る</a></p>';
+    echo '</div>';
+    echo '</div>';
 } catch (Exception $e) {
     $pdo->rollBack();
     echo '<p>エラー: ' . htmlspecialchars($e->getMessage(), ENT_QUOTES, 'UTF-8') . '</p>';

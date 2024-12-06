@@ -7,26 +7,30 @@
 body {
     justify-content: center;
     align-items: center;
+    height: 100vh;
     background-color: #ffffff;
     margin: 0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-shrink: 0; /* ヘッダーは縮小しない */
+    width: 100%;
 }
 
 .top-bar {
-    display: flex; /* 要素を横並びに */
-    justify-content: space-between; /* 左右にスペースを作る */
-    align-items: center; /* アイテムを垂直中央揃え */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 20px;
     background-color: #2A3B76;
     color: #ffffff;
-    margin-bottom: 50px;
+    position: fixed; /* 固定位置 */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* 他の要素より前面に表示 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 影を追加 */
+    height: 70px;
 }
 
 .site-title {
@@ -83,7 +87,7 @@ body {
 }
 
 .akaunt-btn{
-    padding: 10px 20px;
+    padding: 8px 10px;
     background-color: #2A3B76;
     border: none;
     border-radius: 10px;
@@ -92,3 +96,5 @@ body {
     margin-left: 20px; /* 検索バーとカートボタンの間にスペースを追加 */
     transition: background-color 0.3s ease;
 }
+
+

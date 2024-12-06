@@ -28,7 +28,6 @@ echo '<div class="container2">';
             echo '<div class="image-container">';
             echo '<img src="', $product['photograph'],'" class="card_image",', '" alt="Product Image">';
             echo '<div class="magnifier"></div>';/*これは拡大鏡の！*/ 
-            echo '<div class="image-caption">※画像触れると一部拡大されます</div>';
             echo '</div>';
             echo '<div class="details-container">';
             echo '<h1>', $product['product_name'], '</h1>';

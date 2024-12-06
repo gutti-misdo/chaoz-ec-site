@@ -1,7 +1,10 @@
-<link rel="stylesheet" href="./css/place-order.css">
 <?php
 session_start();
+?>
 
+<link rel="stylesheet" href="./css/place-order.css">
+
+<?php
 include 'home-head.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

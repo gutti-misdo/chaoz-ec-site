@@ -34,9 +34,6 @@ session_start();
         }
         ?>
     </div>
-    <?php
-    include 'category-list.php';
-    ?>
 </body>
 
 </html>

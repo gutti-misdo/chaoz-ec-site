@@ -1,7 +1,8 @@
-<link rel="stylesheet" href="./css/my-page-finish.css">
 <?php
 session_start();
-
+?>
+<link rel="stylesheet" href="./css/my-page-finish.css">
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_address = $_POST['new_address'];
     $new_building_name = $_POST['new_building_name'];

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新規登録画面</title>
     <link rel="stylesheet" href="./css/signup-page.css">
 </head>
+
 <body>
-<div class="container">
+    <div class="container">
         <h3 class="form-title">新規登録</h3>
         <form action="signup-confirm-page.php" method="post">
             <label class="form-label" for="name">氏名</label>
@@ -26,14 +28,16 @@
             <input type="text" class="form-field" id="address" name="address" placeholder="住所" required>
 
             <label class="form-label" for="BN">建物名</label>
-            <input type="text" class="form-field" id="BN" name="BN" placeholder="〇〇〇マンション" required>
+            <input type="text" class="form-field" id="BN" name="BN" placeholder="〇〇〇マンション">
 
             <label class="form-label" for="RN">部屋番号</label>
-            <input type="text" class="form-field" id="RN" name="RN" placeholder="〇〇〇号室" required>
+            <input type="text" class="form-field" id="RN" name="RN" placeholder="〇〇〇号室">
             <div class="button-container">
                 <button type="submit" class="submit-button">登録内容の確認</button>
             </div>
         </form>
     </div>
+    <script src='./js/check-email.js'></script>
 </body>
+
 </html>

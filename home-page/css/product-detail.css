@@ -1,0 +1,110 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.image-container {
+    flex: 1;
+    max-width: 450px;
+    margin-left: 20px;
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    align-items: center;
+}
+
+.image-caption {
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.magnifier {
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: none;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.details-container {
+    flex: 1;
+    padding-left: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 170px;
+    font-family: '';
+}
+
+
+p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+    margin-top: 60px 0;
+}
+
+.price {
+    font-size: 28px;
+    color: #e60000;
+    margin: 25px 0;
+}
+
+/*個数のoptionのcss*/
+.quantity {
+    margin: 15px 0;
+}
+
+.quantity select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 18px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.quantity select:hover {
+    border-color: #ff6600;
+}
+
+.quantity option {
+    padding: 12px;
+    background-color: #fff;
+    color: #333;
+}
+
+.add-to-cart {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #e65c00;
+}
